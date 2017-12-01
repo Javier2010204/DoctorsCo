@@ -1,0 +1,37 @@
+<div class="container text-center">
+	<div class="card patient text-left">
+		<div class="actions absolute">
+			<%= link_to "Editar", root_path%>
+			<%= link_to "Eliminar", root_path%>
+		</div>
+		<% if current_user == @user %>
+			<h1>Mi perfil</h1>
+		<% else %>
+			<h1><%= @user.name %> <%= @user.last_name%></h1>
+		<% end %>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 text-center">
+				<%= image_tag @user.avatar.url(:thumb), class: 'cover' %>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<h4>Datos generales</h4>
+				<strong>Nombre</strong>
+				<p><%= best_in_place_if current_user == @user, @user, :name %> <%= best_in_place_if current_user == @user, @user, :last_name %></p>
+				<strong>Especialidad</strong>
+				<p><%= best_in_place_if current_user == @user, @user, :specialty %></p>
+				<strong>Correo electronico:</strong>
+				<p><%= best_in_place_if current_user == @user, @user, :email %></p>
+				<strong>Direccion</strong>
+				<p><%= best_in_place_if current_user == @user, @user, :address %></p>
+				<strong>Telefono</strong>
+				<p><%= best_in_place_if current_user == @user, @user, :phone%></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-space">
+	<%= form_for @user do |f|%>
+		<%= f.file_field :avatar %>
+		<%= f.submit "Enviar" %>
+	<% end %>
+</div>

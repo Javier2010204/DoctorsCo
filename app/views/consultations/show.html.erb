@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @consultation.patient %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @consultation.other %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @consultation.place %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @consultation.subject %>
+</p>
+
+<p>
+  <strong>Annotations:</strong>
+  <%= @consultation.annotations %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @consultation.date %>
+</p>
+
+<p>
+  <strong>Diagnosis:</strong>
+  <%= @consultation.diagnosis %>
+</p>
+
+<h2>Mediciones</h2>
+ 
+<% if @consultation.measurements.any? %>
+  <ul>
+    <% @consultation.measurements.each do |measurement| %>
+    <li><strong>estatura</strong></li>
+    <li><%= measurement.height%></li> 
+    <li><strong>peso</strong></li>
+    <li><%= measurement.weight%></li> 
+    <li><strong>temperatura</strong></li>
+    <li><%= measurement.temperature%></li> 
+    <li><strong>presion arterial</strong></li>
+    <li><%= measurement.blood_pressure%></li> 
+    <li><strong>frecuencia respiratoria </strong></li>
+    <li><%= measurement.breathing_frequency%></li> 
+    <li><strong>frecuencia cardiaca</strong></li>
+    <li><%= measurement.heart_rate%></li> 
+    <li><strong>anotaciones de las mediciones...</strong></li>
+    <li><%= measurement.annotations%></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>no hay mediciones</p>
+<% end %>
+
+<%= link_to 'Edit', edit_consultation_path(@consultation) %> |
+<%= link_to 'Back', consultations_path %>

@@ -1,0 +1,59 @@
+<%= form_with(model: patient, local: true) do |form| %>
+	<% if patient.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(patient.errors.count, "error") %> No se pudo guardar al paciente por: </h2>
+			<ul>
+			<% patient.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="form-group">
+		<%= form.text_field :first_name, class: "form-control", placeholder: "Nombres"%>
+	</div>
+	<div class="form-group">
+		<%= form.text_field :last_name, class: "form-control", placeholder: "Apellidos"%>
+	</div>
+	<div class="form-group">
+		<%= form.text_field :identification_number, class: 'form-control', placeholder: 'Numero de identificacion/Pasaporte'%>
+	</div>
+	<div class="form-group">
+		<%= form.email_field :email, class: 'form-control', placeholder: 'Correo electronico' %>
+	</div>
+	<div class="form-group">
+		<%= form.text_field :phone, class: 'form-control', placeholder: 'Telefono' %>
+	</div>
+	<div class="form-group">
+		<%= form.text_field :country, class: 'form-control', placeholder: 'Pais' %>
+	</div>
+	<div class="form-group">
+		<%= form.text_field :city, class: 'form-control', placeholder: 'Ciudad' %>
+	</div>
+	<div class="form-group">
+		<%= form.number_field :age, class: 'form-control', placeholder: 'Edad' %>
+	</div>
+	<div class="form-group">
+		<%= form.text_field :birthdate, class: 'form-control', placeholder: 'Fecha de nacimiento dd/mm/yyyy'  %>
+	</div>
+	<div class="form-group">
+		<label>Sexo</label>
+		<div class="radio radio-primary">
+			<label for="option1">Femenino
+				<%= form.radio_button :sex, "Femenino", :checked => true, id: "option1" %>
+			</label>
+			<label for="option2">Masculino
+				<%= form.radio_button :sex, "Masculino", :checked => true, id: "option2" %>
+			</label>			
+		</div>
+	</div>
+	<div class="form-group">
+		<%= form.text_area :annotations, class: 'form-control', placeholder: 'Anotaciones sobre el paciente' %>
+	</div>
+	<div class="form-group text-right">
+		<%= link_to 'Regresar a la lista', patients_path %>
+		<%= form.submit "Guardar", class: "btn btn-primary"%>
+	</div>
+<% end %>
+
+

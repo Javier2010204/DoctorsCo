@@ -1,0 +1,35 @@
+<div class="big-padding text-center blue-grey  white-text">
+	<h1>Resultados de la busqueda</h1>
+</div>
+<% @patients.each do |patient| %>
+<div class="container text-center top-space">
+	<div class="card ver-buscador text-left">
+		<div class="actions absolute">
+			<%= link_to "Editar", edit_patient_path(patient),class: "text-primary"%>
+			<%= link_to "Eliminar", patient,method: :destroy, class: "text-danger"%>
+		</div>
+		<h1><%= patient.first_name%><%= patient.last_name%></h1>
+		<div class="row">
+			<div class="col-sm-8 col-xs-12">
+				<strong>codigo</strong>
+				<p><%= patient.code %></p>
+				<strong>Numero de identificacion</strong>
+				<p><%= patient.identification_number%></p>
+				<strong>Edad:</strong>
+				<p><%= patient.age %></p>
+				<strong>Sexo</strong>
+				<p><%= patient.sex %></p>	
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<strong>Pais</strong>
+				<p><%= patient.country %></p>	
+				<strong>Telefono</strong>
+				<p><%= patient.phone %></p>
+				<strong>Correo electronico</strong>
+				<p><%= patient.email%></p>
+				<%= link_to 'Mostrar', patient, class: 'btn btn-primary'%>
+			</div>				
+		</div>
+	</div>
+</div>
+<% end%>

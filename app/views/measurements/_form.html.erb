@@ -1,0 +1,46 @@
+<%= form_for @measurement do |form| %>
+    
+    <div class="form-group">
+    <%= form.text_field :consultation_id, id: :measurement_consultation_id, class: 'form-control', placeholder: 'Seleccione la consulta' %>    
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height, id: :measurement_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight, id: :measurement_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :temperature %>
+    <%= form.number_field :temperature, id: :measurement_temperature %>
+  </div>
+
+  <div class="field">
+    <%= form.label :blood_pressure %>
+    <%= form.text_field :blood_pressure, id: :measurement_blood_pressure %>
+  </div>
+
+  <div class="field">
+    <%= form.label :heart_rate %>
+    <%= form.number_field :heart_rate, id: :measurement_heart_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :breathing_frequency %>
+    <%= form.number_field :breathing_frequency, id: :measurement_breathing_frequency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :annotations %>
+    <%= form.text_area :annotations, id: :measurement_annotations %>
+  </div>
+
+  <div class="field">
+    <%= form.submit 'Guardar'%>
+  </div>
+
+<% end %>

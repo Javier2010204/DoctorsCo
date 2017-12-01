@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @measurement.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @measurement.weight %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @measurement.temperature %>
+</p>
+
+<p>
+  <strong>Blood pressure:</strong>
+  <%= @measurement.blood_pressure %>
+</p>
+
+<p>
+  <strong>Heart rate:</strong>
+  <%= @measurement.heart_rate %>
+</p>
+
+<p>
+  <strong>Breathing frequency:</strong>
+  <%= @measurement.breathing_frequency %>
+</p>
+
+<p>
+  <strong>Annotations:</strong>
+  <%= @measurement.annotations %>
+</p>
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>

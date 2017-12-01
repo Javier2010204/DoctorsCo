@@ -1,0 +1,88 @@
+<div class="container white shadow">
+	<h1>Nueva consulta</h1>
+	<%= form_with(model: consultation, local: true) do |form| %>
+		<% if consultation.errors.any? %>
+				<div id="error_explanation">
+					<h2><%= pluralize(consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
+					<ul>
+					<% consultation.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+					</ul>
+			</div>
+		<% end %>
+		<div class="form-group">
+				<%= form.collection_select :patient_id, @patients, :id, :last_name,
+									{selected: @consultation.patient_id, include_blank: 'Seleccione al paciente...'}, class: 'form-control' %>	
+		</div>
+
+		<div class="form-group">
+			<%= form.text_field :other, id: :consultation_other, class: 'form-control', placeholder: 'Tipo de consulta...' %>
+		</div>
+
+		<div class="form-group">
+			<%= form.text_field :place, id: :consultation_place, class: 'form-control', placeholder: 'Lugar de la consulta...' %>
+		</div>
+
+		<div class="form-group">
+			<%= form.text_field :subject, id: :consultation_subject, class: 'form-control', placeholder: 'Motivo de la consulta' %>
+		</div>
+
+		<div class="form-group">
+			<%= form.datetime_select :date, id: :consultation_date, class: 'form-control', placeholder: 'fecha y hora ' %>
+		</div>
+		<h3>Mediciones</h3>
+		<div class="row text-center">
+			<%= form.fields_for :measurements do |measurement|%>
+				<div class="col-sm-6 col-xs-12">
+					<div class="form-group">
+						<%= measurement.text_field :height, id: :measurement_height, class: 'form-control', placeholder: 'estatura' %>
+					</div>
+					<div class="form-group">
+						<%= measurement.text_field :weight, id: :measurement_weight, class: 'form-control', placeholder: 'peso' %>
+					</div>
+					<div class="form-group">
+						<%= measurement.number_field :temperature, id: :measurement_temperature, class: 'form-control', placeholder: 'temperatura' %>
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-12">
+					<div class="form-group">
+						<%= measurement.text_field :blood_pressure, id: :measurement_blood_pressure, class: 'form-control', placeholder: 'presion arterial' %>
+					</div>
+					<div class="form-group">
+						<%= measurement.number_field :heart_rate, id: :measurement_heart_rate, class: 'form-control', placeholder: 'frecuencia cardiaca' %>
+					</div>
+					<div class="form-group">
+						<%= measurement.number_field :breathing_frequency, id: :measurement_breathing_frequency, class: 'form-control', placeholder: 'frecuencia pulmonar' %>
+					</div>
+					<div class="form-group">
+						<%= measurement.number_field :annotations, id: :measurement_annotations, class: 'form-control', placeholder: 'anotaciones sobre las mediciones...' %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="row text-center">
+			<div class="col-sm-6 col-xs-12">
+				<h3>Diagnostico de la consulta</h3>
+				<div class="form-group">
+					<%= form.text_area :diagnosis, id: :consultation_diagnosis, class: 'form-control', placeholder: 'Describa aqui el diagnostico de la consulta....' %>
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<h3>Anotaciones</h3>
+				<%= form.text_area :annotations, id: :consultation_annotations, class: 'form-control', placeholder: 'Anotaciones sobre la consulta...' %>
+			</div>
+		</div>
+		<div class="form-group text-right">
+			<%= link_to 'Regresar a la lista de consultas', consultations_path, class: 'text-info btn-link' %>
+			<%= form.submit 'Guardar', class: 'btn btn-success' %>
+		</div>
+	<% end %>
+</div>
+
+
+
+
+
+
+
