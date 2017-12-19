@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id          :integer          not null, primary key
+#  date        :datetime
+#  annotations :text
+#  patient_id  :integer
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-12-12 08:56:08
+  annotations: MyText
+  patient: one
+  user: one
+
+two:
+  date: 2017-12-12 08:56:08
+  annotations: MyText
+  patient: two
+  user: two

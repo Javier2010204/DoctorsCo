@@ -68,7 +68,12 @@ class MeasurementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def measurement_params
-      params.require(:measurement).permit(:consultation_id,:height, :weight, :temperature, :blood_pressure, :heart_rate, :breathing_frequency, :annotations)
+      params.require(:measurement).permit(:consultation_id,:height, :weight, :temperature, 
+                                :blood_pressure, :heart_rate, :breathing_frequency, :annotations, :talla,:fum, :antitetanica,
+                                :fuma, :semanas_amenorrea, :tension_arterial, :alt_uterina, :FCF, :edad_gestacion,
+                                :tamanio_fetal_acorde, :contracciones, :dilatacion_cerv, :tipo_terminacion, :tiempo_terminacion,
+                                :muerte_intraut, :episiotomia, :desgarros, :sexo, :peso_al_nacer, :talla_al_nacer,
+                                :edad_por_ex_fisico, :patologias)
     end
 
 end

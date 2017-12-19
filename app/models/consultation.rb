@@ -20,4 +20,13 @@ class Consultation < ApplicationRecord
 	accepts_nested_attributes_for :measurements
 
 	#, reject_if: proc {|attr| attr[:heigth, :weight, annotations, blod_pressure, breathing_rate, etc...].blank ?}
+
+	def patient_name
+		if self.patient
+			self.patient.first_name
+			self.patient.last_name
+		else
+			' '
+		end
+	end
 end

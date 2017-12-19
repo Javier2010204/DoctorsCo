@@ -137,7 +137,13 @@ html,body{
 	display: inline-block;
 }
 .main-background{
-	background-image: url(#{asset_path('background.jpg')});
+	background-image: url(#{asset_path('doctor.jpg')});
 	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
+	background-color: grey;
+	background-blend-mode: darken;
+}
+li.active{
+	border-bottom: 3px solid #37474f !important;
 }

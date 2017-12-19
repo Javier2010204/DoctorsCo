@@ -1,0 +1,2 @@
+class PatientsSuggestionController < ApplicationController
+end

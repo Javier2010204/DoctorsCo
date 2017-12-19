@@ -34,7 +34,6 @@ gem 'best_in_place'
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'haml-rails'
 gem 'paperclip'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -49,6 +48,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'letter_opener'
   gem 'selenium-webdriver'
 end
 

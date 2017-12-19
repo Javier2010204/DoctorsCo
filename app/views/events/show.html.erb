@@ -1,0 +1,23 @@
+<div class="container text-center">
+	<div class="card patient text-left">
+		<div class="actions absolute">
+			<%= link_to "Editar", edit_event_path(@event),class: ""%>
+			<%= link_to "Eliminar", event_path(:id),method: :destroy, class: ""%>
+		</div>
+		<h1><%=@event.patient.first_name%> <%= @event.patient.last_name%></h1>
+		<div class="row">
+			<div class="col-sm-8 col-xs-12">
+				<strong class="be-medium">Fecha</strong>
+				<p class="be-medium"><%= @event.date %></p>
+				<strong class="be-medium">Hora</strong>
+				<p class="be-medium"><%= @event.time.strftime('%H:%M') %></p>
+				<p class="be-medium"><%= Date.today %></p>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<strong>Anotaciones:</strong>
+				<p><%= @event.annotations%></p>
+				<%=link_to 'enviar email', patients_path, class: 'btn btn-inverse' %>
+			</div>				
+		</div>
+	</div>
+</div>

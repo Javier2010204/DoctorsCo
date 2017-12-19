@@ -1,0 +1,31 @@
+<div class="big-padding text-center blue-grey white-text">
+  <h1>Listado de consultas</h1>
+</div>
+<div class="container">
+  <table class="table table-bordered white">
+    <thead>
+      <tr>
+        <th>Paciente</th>
+        <th>Fecha y hora</th>
+        <th>Anotaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.patient.first_name %> <%= event.patient.last_name %></td>
+          <td><%= event.date %></td>
+          <td><%= event.annotations.truncate(30) %></td>
+          <td><%= link_to 'Mostrar', event %></td>
+          <td><%= link_to 'Editar', edit_event_path(event) %></td>
+          <td><%= link_to 'Eliminar', event, method: :delete, data: { confirm: 'Seguro que desea eliminar la cita?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="floating">
+  <%= button_to new_event_path(), class: 'btn btn-info btn-fab', method: :get do %>
+    <i class="material-icons">add</i>
+  <% end %>
+</div>

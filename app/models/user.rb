@@ -37,4 +37,6 @@ class User < ApplicationRecord
   	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 	has_many :patients
+	has_many :posts
+	has_many :events
 end

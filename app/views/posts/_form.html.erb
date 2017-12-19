@@ -1,0 +1,26 @@
+<%= form_with(model: post, local: true) do |form| %>
+	<% if post.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(post.errors.count, "error") %> hicieron que no fuera valida la publicacion:</h2>
+
+			<ul>
+			<% post.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= form.text_field :title, id: :post_title, class: 'form-control', placeholder: 'Titulo', rows: 5 %>
+	</div>
+
+	<div class="form-group">
+		<%= form.text_area :body, id: :post_body, class: 'form-control', placeholder: 'Escribe aqui la descripcion de lo que quieres comunicar' %>
+	</div>
+
+	<div class="top-space form-group text-right">
+		<%= link_to 'regresar a las publicaciones', posts_path, class: 'txt-info' %>
+		<%= form.submit 'Publicar', class: 'btn btn-info' %>
+	</div>
+<% end %>

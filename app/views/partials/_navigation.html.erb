@@ -10,10 +10,13 @@
 			<% if user_signed_in? %>
 				<li> <%= link_to 'Pacientes', patients_path()%></li>
 				<li> <%= link_to 'Consultas', consultations_path()%></li>
+				<li> <%= link_to 'Citas', events_path()%></li>
 				<li><%= link_to 'Buscar', search_new_path ,method: :get, remote: true %></li>
+				<li> <%= link_to 'Comunidad', posts_path()%></li>
+				<li><%= link_to 'Mi perfil', current_user %></li>
 				<li><%= link_to 'Cerrar Sesion', destroy_user_session_path,method: :delete %></li>
 			<% else %>
-				<li><%= link_to 'Registrarme', new_user_registration_path %></li>
+				<li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
 			<% end %>
 		</ul>
 	</div>

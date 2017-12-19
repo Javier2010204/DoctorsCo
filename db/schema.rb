@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122193025) do
+ActiveRecord::Schema.define(version: 20171218154822) do
 
   create_table "consultations", force: :cascade do |t|
     t.integer "patient_id"
@@ -25,20 +25,29 @@ ActiveRecord::Schema.define(version: 20171122193025) do
     t.index ["patient_id"], name: "index_consultations_on_patient_id"
   end
 
-  create_table "measurements", force: :cascade do |t|
-    t.integer "consultation_id"
-    t.decimal "height"
-    t.decimal "weight"
-    t.integer "temperature"
-    t.string "blood_pressure"
-    t.integer "heart_rate"
-    t.integer "breathing_frequency"
-    t.datetime "date"
-    t.text "annotations"
+  create_table "contacts", force: :cascade do |t|
+    t.string "email"
+    t.string "name"
+    t.string "subject"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["consultation_id"], name: "index_measurements_on_consultation_id"
   end
+
+  create_table "events", force: :cascade do |t|
+    t.text "annotations"
+    t.integer "patient_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "date"
+    t.time "time"
+    t.index ["patient_id"], name: "index_events_on_patient_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+# Could not dump table "measurements" because of following StandardError
+#   Unknown type 'tipo' for column 'nombre_campo'
 
   create_table "patients", force: :cascade do |t|
     t.integer "code"
@@ -57,6 +66,15 @@ ActiveRecord::Schema.define(version: 20171122193025) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_patients_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "prescriptions", force: :cascade do |t|

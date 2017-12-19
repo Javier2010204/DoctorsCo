@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1><%= @contact.subject %></h1>
+		<p>Correo: <strong><%= @contact.email %></strong></p>
+		<p>Nombre: <strong><%= @contact.name %></strong></p>
+		<p>Asunto: <strong><%= @contact.subject %></strong></p>
+		<p>Texto: <strong><%= @contact.body %></strong></p>
+		<%= link_to 'Ir a la app', contact_url(@contact) %>
+	</body>
+</html>

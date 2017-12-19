@@ -1,0 +1,38 @@
+<%= form_with(model: event, local: true) do |form| %>
+	<% if event.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+			<ul>
+			<% event.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+				<%= form.collection_select :patient_id, @patients, :id, :last_name,
+									{selected: @event.patient_id, include_blank: 'Seleccione al paciente...'}, class: 'form-control' %>	
+	</div>
+
+	<div class="form-group">
+		<%= form.label "Hora" %>
+		<%= form.time_select :time, id: :event_date, class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= form.label "Fecha" %>
+		<%= form.date_select :date, id: :event_date,order: [:year, :month, :day], class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<%= form.text_area :annotations, id: :event_annotations, class: 'form-control', placeholder: 'Anotaciones sobre la cita' %>
+	</div>
+
+	<div class="form-group text-right">
+		<%= link_to 'Regresar a la lista de citas', events_path, class: 'text-info btn-link' %>
+		<%= form.submit 'Guardar', class: 'btn btn-success' %>
+	</div>
+
+<% end %>

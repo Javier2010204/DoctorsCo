@@ -1,8 +1,7 @@
-<div class="container text-center">
+ <div class="container text-center">
 	<div class="card patient text-left">
 		<div class="actions absolute">
-			<%= link_to "Editar", root_path%>
-			<%= link_to "Eliminar", root_path%>
+			<%= link_to "Editar"%>
 		</div>
 		<% if current_user == @user %>
 			<h1>Mi perfil</h1>
@@ -12,6 +11,12 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 text-center">
 				<%= image_tag @user.avatar.url(:thumb), class: 'cover' %>
+				<div class="top-space">
+					<%= form_for @user do |f|%>
+						<%= f.file_field :avatar %>
+						<%= f.submit "Cambiar imagen", class: 'btn btn-info	' %>
+					<% end %>
+				</div>
 			</div>
 			<div class="col-sm-6 col-xs-12">
 				<h4>Datos generales</h4>
@@ -28,10 +33,4 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="top-space">
-	<%= form_for @user do |f|%>
-		<%= f.file_field :avatar %>
-		<%= f.submit "Enviar" %>
-	<% end %>
 </div>

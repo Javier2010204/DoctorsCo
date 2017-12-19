@@ -1,0 +1,2 @@
+module PatientsSuggestionHelper
+end

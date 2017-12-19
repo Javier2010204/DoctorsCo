@@ -32,34 +32,220 @@
 			<%= form.datetime_select :date, id: :consultation_date, class: 'form-control', placeholder: 'fecha y hora ' %>
 		</div>
 		<h3>Mediciones</h3>
+
 		<div class="row text-center">
-			<%= form.fields_for :measurements do |measurement|%>
-				<div class="col-sm-6 col-xs-12">
-					<div class="form-group">
-						<%= measurement.text_field :height, id: :measurement_height, class: 'form-control', placeholder: 'estatura' %>
+			<div class="col-xs-12">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs nav-justified light-blue" role= "tablist">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#general" role="tab">
+							General
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#embarazo_actual" role="tab">Embarazo Actual</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#parto" role="tab">Parto/Aborto</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#recien_nacido" role="tab">Recien Nacido</a>
+					</li>
+				</ul>
+				<!-- Tab panels -->
+				<div class="tab-content">
+					<!--Panel 1-->
+					<div class="tab-pane fade active" id="general" role="tabpanel">
+						<div class="top-space">
+							<%= form.fields_for :measurements do |measurement|%>
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<%= measurement.text_field :height, id: :measurement_height, class: 'form-control', placeholder: 'estatura' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.text_field :weight, id: :measurement_weight, class: 'form-control', placeholder: 'peso' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.number_field :temperature, id: :measurement_temperature, class: 'form-control', placeholder: 'temperatura' %>
+									</div>
+								</div>
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<%= measurement.text_field :blood_pressure, id: :measurement_blood_pressure, class: 'form-control', placeholder: 'presion arterial' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.number_field :heart_rate, id: :measurement_heart_rate, class: 'form-control', placeholder: 'frecuencia cardiaca' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.number_field :breathing_frequency, id: :measurement_breathing_frequency, class: 'form-control', placeholder: 'frecuencia pulmonar' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.number_field :annotations, id: :measurement_annotations, class: 'form-control', placeholder: 'anotaciones sobre las mediciones...' %>
+									</div>
+								</div>
+							<% end %>
+						</div>
 					</div>
-					<div class="form-group">
-						<%= measurement.text_field :weight, id: :measurement_weight, class: 'form-control', placeholder: 'peso' %>
+					<!--Panel 2-->
+					<div class="tab-pane fade" id="embarazo_actual" role="tabpanel">
+						<div class="top-space">
+							<%= form.fields_for :measurements do |measurement|%>
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<%= measurement.number_field :talla, id: :measurement_talla, class: 'form-control', placeholder: 'Talla' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.text_field :fum, id: :measurement_fum, class: 'form-control', placeholder: 'FUM(dia-mes-año)' %>
+									</div>
+									<div class="form-group text-left">
+										<label>Fuma</label>
+										<div class="radio radio-primary">
+											<label for="fuma_si">SI
+												<%= form.radio_button :fuma, "SI", :checked => true, id: "fuma_si" %>
+											</label>
+											<label for="fuma_no">NO
+												<%= form.radio_button :fuma, "NO", :checked => true, id: "fuma_no" %>
+											</label>			
+										</div>
+									</div>
+									<div class="form-group text-left">
+										<label>Antitetanica</label>
+										<div class="radio radio-primary">
+											<label for="antitetanica_si">SI
+												<%= form.radio_button :antitetanica, "SI", :checked => true, id: "antitetanica_si" %>
+											</label>
+											<label for="antitetanica_no">NO
+												<%= form.radio_button :antitetanica, "NO", :checked => true, id: "antitetanica_no" %>
+											</label>			
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<%= measurement.text_field :semanas_amenorrea, id: :measurement_semanas_amenorrea, class: 'form-control', placeholder: 'semanas de amenorrea' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.number_field :tension_arterial, id: :measurement_tension_arterial, class: 'form-control', placeholder: 'tension arterial' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.number_field :FCF, id: :measurement_FCF, class: 'form-control', placeholder: 'FCF' %>
+									</div>
+								</div>
+							<% end %>
+						</div>
 					</div>
-					<div class="form-group">
-						<%= measurement.number_field :temperature, id: :measurement_temperature, class: 'form-control', placeholder: 'temperatura' %>
+					<!--Panel 3-->
+					<div class="tab-pane fade" id="parto" role="tabpanel">
+						<div class="top-space">
+							<%= form.fields_for :measurements do |measurement|%>
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<%= measurement.number_field :edad_gestacion, id: :measurement_edad_gestacion, class: 'form-control', placeholder: 'edad de gestacion' %>
+									</div>
+									<div class="form-group text-left">
+										<label>El tamaño fetal es acorde?</label>
+										<div class="radio radio-primary">
+											<label for="acorde_si">SI
+												<%= form.radio_button :tamanio_fetal_acorde, "SI", :checked => true, id: "acorde_si" %>
+											</label>
+											<label for="acorde_no">NO
+												<%= form.radio_button :tamanio_fetal_acorde, "NO", :checked => true, id: "acorde_no" %>
+											</label>			
+										</div>
+									</div>
+									<div class="form-group">
+										<%= measurement.text_field :contracciones, id: :measurement_contracciones, class: 'form-control', placeholder: 'contracciones (frec. 10min) ' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.text_field :dilatacion_cerv, id: :measurement_dilatacion_cerv, class: 'form-control', placeholder: 'dilatacion cerv' %>
+									</div>
+								</div>
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label>Tiempo de terminacion</label>
+										<%= form.datetime_select :date, id: :tiempo_terminacion, class: 'form-control', placeholder: 'fecha y hora ' %>
+									</div>
+									<div class="form-group text-left">
+										<label>muerte intraut.</label>
+										<div class="radio radio-primary">
+											<label for="si_emb">SI EMB.
+												<%= form.radio_button :muerte_intraut, "SI EMB", :checked => true, id: "si_emb" %>
+											</label>
+											<label for="si_part">SI PART.
+												<%= form.radio_button :muerte_intraut, "SI PART", :checked => true, id: "si_part" %>
+											</label>
+											<label for="no_muer">NO
+												<%= form.radio_button :muerte_intraut, "NO", :checked => true, id: "no_muer" %>
+											</label>			
+										</div>
+									</div>
+									<div class="form-group text-left">
+										<label>Episiotomia</label>
+										<div class="radio radio-primary">
+											<label for="epi_si">SI
+												<%= form.radio_button :episiotomia, "SI", :checked => true, id: "epi_si" %>
+											</label>
+											<label for="epi_no">NO
+												<%= form.radio_button :episiotomia, "NO", :checked => true, id: "epi_no" %>
+											</label>			
+										</div>
+									</div>
+									<div class="form-group text-left">
+										<label>Desgarros</label>
+										<div class="radio radio-primary">
+											<label for="des_si">SI
+												<%= form.radio_button :desgarros, "SI", :checked => true, id: "des_si" %>
+											</label>
+											<label for="des_no">NO
+												<%= form.radio_button :desgarros, "NO", :checked => true, id: "des_no" %>
+											</label>			
+										</div>
+									</div>
+								</div>
+							<% end %>
+						</div>
 					</div>
+					<!--Panel 4-->
+					<div class="tab-pane fade" id="recien_nacido" role="tabpanel">
+						<div class="top-space">
+							<%= form.fields_for :measurements do |measurement|%>
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group text-left">
+										<label>Sexo del recien nacido</label>
+										<div class="radio radio-primary">
+											<label for="re_M">M
+												<%= form.radio_button :sexo, "M", :checked => true, id: "re_M" %>
+											</label>
+											<label for="re_f">F
+												<%= form.radio_button :sexo, "F", :checked => true, id: "re_f" %>
+											</label>			
+										</div>
+									</div>
+									<div class="form-group">
+										<%= measurement.text_field :peso_al_nacer, id: :measurement_peso_al_nacer, class: 'form-control', placeholder: 'Peso al nacer (gramos)' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.number_field	 :talla_al_nacer, id: :measurement_talla_al_nacer, class: 'form-control', placeholder: 'Talla al nacer (centimetros)' %>
+									</div>
+								</div>
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<%= measurement.text_field :semanas_amenorrea, id: :measurement_semanas_amenorrea, class: 'form-control', placeholder: 'semanas de amenorrea' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.number_field :edad_por_ex_fisico, id: :measurement_edad_por_ex_fisico, class: 'form-control', placeholder: 'Edad por examen fisico' %>
+									</div>
+									<div class="form-group">
+										<%= measurement.text_area :patologias, id: :measurement_patologias, class: 'form-control', placeholder: 'Listado de patologias' %>
+									</div>
+								</div>
+							<% end %>
+						</div>
 				</div>
-				<div class="col-sm-6 col-xs-12">
-					<div class="form-group">
-						<%= measurement.text_field :blood_pressure, id: :measurement_blood_pressure, class: 'form-control', placeholder: 'presion arterial' %>
-					</div>
-					<div class="form-group">
-						<%= measurement.number_field :heart_rate, id: :measurement_heart_rate, class: 'form-control', placeholder: 'frecuencia cardiaca' %>
-					</div>
-					<div class="form-group">
-						<%= measurement.number_field :breathing_frequency, id: :measurement_breathing_frequency, class: 'form-control', placeholder: 'frecuencia pulmonar' %>
-					</div>
-					<div class="form-group">
-						<%= measurement.number_field :annotations, id: :measurement_annotations, class: 'form-control', placeholder: 'anotaciones sobre las mediciones...' %>
-					</div>
-				</div>
-			<% end %>
+			</div>
+		</div>
+		<div class="row text-center">
+			
 		</div>
 		<div class="row text-center">
 			<div class="col-sm-6 col-xs-12">

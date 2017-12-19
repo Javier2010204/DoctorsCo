@@ -1,0 +1,19 @@
+<div class="big-padding text-center blue-grey white-text">
+	<h1>Bienvenido a las sugerencias de la comunidad</h1>
+	<p>Para juntos crear una mejor plataforma para ustedes los medicos</p>
+</div>
+<div class="container">
+	<% @posts.each do |post|%>
+		<div class="row top-space">
+			<div class="col-xs-12 col-sm-10">
+				<div class="card big-padding">
+					<h4 class="underline"><%= post.title %></h4>
+					<p><%= post.body %></p>
+					<p class="text-right">Escrito por: <strong><%= post.user.email %></strong></p>
+					<div class="text-right">
+					</div>
+				</div>
+			</div>
+		</div>
+	<%end%>
+</div>
