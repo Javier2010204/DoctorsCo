@@ -15,7 +15,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   #For mailing
-  config.action_mailer.default_url_options = { host: "doctorsco.com"}
+  config.action_mailer.default_url_options = { host: "doctorsco.net"}
 
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or

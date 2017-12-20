@@ -40,6 +40,12 @@
   </div>
 
   <div class="field">
+    <%= form.label :breathing_frequency %>
+    <%= form.number_field :breathing_frequency, id: :measurement_breathing_frequency %>
+  </div>
+
+
+  <div class="field">
     <%= form.submit 'Guardar'%>
   </div>
 

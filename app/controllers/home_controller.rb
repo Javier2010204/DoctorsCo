@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	layout :set_layout, only:[:unregistered]
+	layout :set_layout, only:[:unregistered, :suscribe]
 	
 	def index
 		@user = current_user

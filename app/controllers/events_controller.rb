@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 	# GET /events
 	# GET /events.json
 	def index
-		@events = Event.all
+		@events = current_user.events
 	end
 
 	# GET /events/1
@@ -74,6 +74,6 @@ class EventsController < ApplicationController
 		end
 
 		def set_combo_values
-			@patients = Patient.all.order(:first_name, :last_name)
+			@patients = current_user.patients.order(:first_name, :last_name)
 		end
 end

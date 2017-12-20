@@ -39,4 +39,5 @@ class User < ApplicationRecord
 	has_many :patients
 	has_many :posts
 	has_many :events
+	has_many :consultations
 end

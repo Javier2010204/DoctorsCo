@@ -16,17 +16,13 @@
 
 class Consultation < ApplicationRecord
 	belongs_to :patient
+	belongs_to :user
 	has_many :measurements, dependent: :destroy
 	accepts_nested_attributes_for :measurements
 
+	has_many :prescriptions, dependent: :destroy
+	accepts_nested_attributes_for :prescriptions
+
 	#, reject_if: proc {|attr| attr[:heigth, :weight, annotations, blod_pressure, breathing_rate, etc...].blank ?}
 
-	def patient_name
-		if self.patient
-			self.patient.first_name
-			self.patient.last_name
-		else
-			' '
-		end
-	end
 end

@@ -2,18 +2,32 @@
 	<h1>Bienvenido a las sugerencias de la comunidad</h1>
 	<p>Para juntos crear una mejor plataforma para ustedes los medicos</p>
 </div>
-<div class="container">
-	<% @posts.each do |post|%>
-		<div class="row top-space">
-			<div class="col-xs-12 col-sm-10">
-				<div class="card big-padding">
-					<h4 class="underline"><%= post.title %></h4>
-					<p><%= post.body %></p>
+<div class="top-space container">
+</div>
+<% @posts.each do |post| %>
+		<div class="container text-center top-space">
+			<div class="card patient text-left">
+				<div class="actions absolute">
+					<% if current_user == post.user %>
+						<%= link_to "Editar", edit_event_url(post), class: ""%>
+						<%= link_to "Eliminar", post,method: :destroy, class: "red-text"%>
+					<% end %>
 					<p class="text-right">Escrito por: <strong><%= post.user.email %></strong></p>
-					<div class="text-right">
+				</div>
+				<h1 class="be-medium"><%= post.title%></h1>
+				<div class="row">
+					<div class="col-sm-8 col-xs-12 text-center">
+							<p><%= post.body %></p>
 					</div>
+					<div class="col-sm-4 col-xs-12 text-right">
+						<%=link_to 'votar', post , class: 'btn btn-inverse' %>
+					</div>				
 				</div>
 			</div>
 		</div>
+<% end %>
+<div class="floating">
+	<%= button_to new_post_path(),method: :get, class: "btn btn-primary btn-fab " do%>
+		<i class="material-icons">edit</i>
 	<%end%>
-</div>
+</div>hola1234

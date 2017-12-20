@@ -1,63 +1,61 @@
-<div class="container white shadow">
-	<h1>Nueva consulta</h1>
-	<%= form_with(model: consultation, local: true) do |form| %>
-		<% if consultation.errors.any? %>
-				<div id="error_explanation">
-					<h2><%= pluralize(consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
-					<ul>
-					<% consultation.errors.full_messages.each do |message| %>
-						<li><%= message %></li>
-					<% end %>
-					</ul>
-			</div>
-		<% end %>
-		<div class="form-group">
-				<%= form.collection_select :patient_id, @patients, :id, :last_name,
-									{selected: @consultation.patient_id, include_blank: 'Seleccione al paciente...'}, class: 'form-control' %>	
-		</div>
-
-		<div class="form-group">
-			<%= form.text_field :other, id: :consultation_other, class: 'form-control', placeholder: 'Tipo de consulta...' %>
-		</div>
-
-		<div class="form-group">
-			<%= form.text_field :place, id: :consultation_place, class: 'form-control', placeholder: 'Lugar de la consulta...' %>
-		</div>
-
-		<div class="form-group">
-			<%= form.text_field :subject, id: :consultation_subject, class: 'form-control', placeholder: 'Motivo de la consulta' %>
-		</div>
-
-		<div class="form-group">
-			<%= form.datetime_select :date, id: :consultation_date, class: 'form-control', placeholder: 'fecha y hora ' %>
-		</div>
-		<h3>Mediciones</h3>
-
-		<div class="row text-center">
-			<div class="col-xs-12">
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs nav-justified light-blue" role= "tablist">
-					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#general" role="tab">
-							General
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#embarazo_actual" role="tab">Embarazo Actual</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#parto" role="tab">Parto/Aborto</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#recien_nacido" role="tab">Recien Nacido</a>
-					</li>
+<%= form_with(model: consultation, local: true) do |form| %>
+	<% if consultation.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
+				<ul>
+				<% consultation.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
 				</ul>
-				<!-- Tab panels -->
-				<div class="tab-content">
-					<!--Panel 1-->
+		</div>
+	<% end %>
+	<div class="form-group">
+			<%= form.collection_select :patient_id, @patients, :id, :last_name,
+								{selected: @consultation.patient_id, include_blank: 'Seleccione al paciente...'}, class: 'form-control' %>	
+	</div>
+
+	<div class="form-group">
+		<%= form.text_field :other, id: :consultation_other, class: 'form-control', placeholder: 'Tipo de consulta...' %>
+	</div>
+
+	<div class="form-group">
+		<%= form.text_field :place, id: :consultation_place, class: 'form-control', placeholder: 'Lugar de la consulta...' %>
+	</div>
+
+	<div class="form-group">
+		<%= form.text_field :subject, id: :consultation_subject, class: 'form-control', placeholder: 'Motivo de la consulta' %>
+	</div>
+
+	<div class="form-group">
+		<%= form.datetime_select :date, id: :consultation_date, class: 'form-control', placeholder: 'fecha y hora ' %>
+	</div>
+	<h3>Mediciones</h3>
+
+	<div class="row text-center">
+		<div class="col-xs-12">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs nav-justified light-blue" role= "tablist">
+				<li class="nav-item">
+					<a class="nav-link active" data-toggle="tab" href="#general" role="tab">
+						General
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#embarazo_actual" role="tab">Embarazo Actual</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#parto" role="tab">Parto/Aborto</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#recien_nacido" role="tab">Recien Nacido</a>
+				</li>
+			</ul>
+			<!-- Tab panels -->
+			<div class="tab-content">
+				<%= form.fields_for :measurements do |measurement|%>
+				<!--Panel 1-->
 					<div class="tab-pane fade active" id="general" role="tabpanel">
 						<div class="top-space">
-							<%= form.fields_for :measurements do |measurement|%>
 								<div class="col-sm-6 col-xs-12">
 									<div class="form-group">
 										<%= measurement.text_field :height, id: :measurement_height, class: 'form-control', placeholder: 'estatura' %>
@@ -83,13 +81,11 @@
 										<%= measurement.number_field :annotations, id: :measurement_annotations, class: 'form-control', placeholder: 'anotaciones sobre las mediciones...' %>
 									</div>
 								</div>
-							<% end %>
 						</div>
 					</div>
 					<!--Panel 2-->
 					<div class="tab-pane fade" id="embarazo_actual" role="tabpanel">
 						<div class="top-space">
-							<%= form.fields_for :measurements do |measurement|%>
 								<div class="col-sm-6 col-xs-12">
 									<div class="form-group">
 										<%= measurement.number_field :talla, id: :measurement_talla, class: 'form-control', placeholder: 'Talla' %>
@@ -101,10 +97,10 @@
 										<label>Fuma</label>
 										<div class="radio radio-primary">
 											<label for="fuma_si">SI
-												<%= form.radio_button :fuma, "SI", :checked => true, id: "fuma_si" %>
+												<%= measurement.radio_button :fuma, "SI", :checked => true, id: "fuma_si" %>
 											</label>
 											<label for="fuma_no">NO
-												<%= form.radio_button :fuma, "NO", :checked => true, id: "fuma_no" %>
+												<%= measurement.radio_button :fuma, "NO", :checked => true, id: "fuma_no" %>
 											</label>			
 										</div>
 									</div>
@@ -112,10 +108,10 @@
 										<label>Antitetanica</label>
 										<div class="radio radio-primary">
 											<label for="antitetanica_si">SI
-												<%= form.radio_button :antitetanica, "SI", :checked => true, id: "antitetanica_si" %>
+												<%= measurement.radio_button :antitetanica, "SI", :checked => true, id: "antitetanica_si" %>
 											</label>
 											<label for="antitetanica_no">NO
-												<%= form.radio_button :antitetanica, "NO", :checked => true, id: "antitetanica_no" %>
+												<%= measurement.radio_button :antitetanica, "NO", :checked => true, id: "antitetanica_no" %>
 											</label>			
 										</div>
 									</div>
@@ -131,13 +127,11 @@
 										<%= measurement.number_field :FCF, id: :measurement_FCF, class: 'form-control', placeholder: 'FCF' %>
 									</div>
 								</div>
-							<% end %>
 						</div>
 					</div>
 					<!--Panel 3-->
 					<div class="tab-pane fade" id="parto" role="tabpanel">
 						<div class="top-space">
-							<%= form.fields_for :measurements do |measurement|%>
 								<div class="col-sm-6 col-xs-12">
 									<div class="form-group">
 										<%= measurement.number_field :edad_gestacion, id: :measurement_edad_gestacion, class: 'form-control', placeholder: 'edad de gestacion' %>
@@ -146,10 +140,10 @@
 										<label>El tamaño fetal es acorde?</label>
 										<div class="radio radio-primary">
 											<label for="acorde_si">SI
-												<%= form.radio_button :tamanio_fetal_acorde, "SI", :checked => true, id: "acorde_si" %>
+												<%= measurement.radio_button :tamanio_fetal_acorde, "SI", :checked => true, id: "acorde_si" %>
 											</label>
 											<label for="acorde_no">NO
-												<%= form.radio_button :tamanio_fetal_acorde, "NO", :checked => true, id: "acorde_no" %>
+												<%= measurement.radio_button :tamanio_fetal_acorde, "NO", :checked => true, id: "acorde_no" %>
 											</label>			
 										</div>
 									</div>
@@ -163,19 +157,19 @@
 								<div class="col-sm-6 col-xs-12">
 									<div class="form-group">
 										<label>Tiempo de terminacion</label>
-										<%= form.datetime_select :date, id: :tiempo_terminacion, class: 'form-control', placeholder: 'fecha y hora ' %>
+										<%= measurement.datetime_select :date, id: :tiempo_terminacion, class: 'form-control', placeholder: 'fecha y hora ' %>
 									</div>
 									<div class="form-group text-left">
 										<label>muerte intraut.</label>
 										<div class="radio radio-primary">
 											<label for="si_emb">SI EMB.
-												<%= form.radio_button :muerte_intraut, "SI EMB", :checked => true, id: "si_emb" %>
+												<%= measurement.radio_button :muerte_intraut, "SI EMB", :checked => true, id: "si_emb" %>
 											</label>
 											<label for="si_part">SI PART.
-												<%= form.radio_button :muerte_intraut, "SI PART", :checked => true, id: "si_part" %>
+												<%= measurement.radio_button :muerte_intraut, "SI PART", :checked => true, id: "si_part" %>
 											</label>
 											<label for="no_muer">NO
-												<%= form.radio_button :muerte_intraut, "NO", :checked => true, id: "no_muer" %>
+												<%= measurement.radio_button :muerte_intraut, "NO", :checked => true, id: "no_muer" %>
 											</label>			
 										</div>
 									</div>
@@ -183,10 +177,10 @@
 										<label>Episiotomia</label>
 										<div class="radio radio-primary">
 											<label for="epi_si">SI
-												<%= form.radio_button :episiotomia, "SI", :checked => true, id: "epi_si" %>
+												<%= measurement.radio_button :episiotomia, "SI", :checked => true, id: "epi_si" %>
 											</label>
 											<label for="epi_no">NO
-												<%= form.radio_button :episiotomia, "NO", :checked => true, id: "epi_no" %>
+												<%= measurement.radio_button :episiotomia, "NO", :checked => true, id: "epi_no" %>
 											</label>			
 										</div>
 									</div>
@@ -194,77 +188,74 @@
 										<label>Desgarros</label>
 										<div class="radio radio-primary">
 											<label for="des_si">SI
-												<%= form.radio_button :desgarros, "SI", :checked => true, id: "des_si" %>
+												<%= measurement.radio_button :desgarros, "SI", :checked => true, id: "des_si" %>
 											</label>
 											<label for="des_no">NO
-												<%= form.radio_button :desgarros, "NO", :checked => true, id: "des_no" %>
+												<%= measurement.radio_button :desgarros, "NO", :checked => true, id: "des_no" %>
 											</label>			
 										</div>
 									</div>
 								</div>
-							<% end %>
 						</div>
+				</div>
+				<!--Panel 4-->
+				<div class="tab-pane fade" id="recien_nacido" role="tabpanel">
+					<div class="top-space">
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group text-left">
+									<label>Sexo del recien nacido</label>
+									<div class="radio radio-primary">
+										<label for="re_M">M
+											<%= measurement.radio_button :sexo, "M", :checked => true, id: "re_M" %>
+										</label>
+										<label for="re_f">F
+											<%= measurement.radio_button :sexo, "F", :checked => true, id: "re_f" %>
+										</label>			
+									</div>
+								</div>
+								<div class="form-group">
+									<%= measurement.text_field :peso_al_nacer, id: :measurement_peso_al_nacer, class: 'form-control', placeholder: 'Peso al nacer (gramos)' %>
+								</div>
+								<div class="form-group">
+									<%= measurement.number_field	 :talla_al_nacer, id: :measurement_talla_al_nacer, class: 'form-control', placeholder: 'Talla al nacer (centimetros)' %>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<%= measurement.text_field :semanas_amenorrea, id: :measurement_semanas_amenorrea, class: 'form-control', placeholder: 'semanas de amenorrea' %>
+								</div>
+								<div class="form-group">
+									<%= measurement.number_field :edad_por_ex_fisico, id: :measurement_edad_por_ex_fisico, class: 'form-control', placeholder: 'Edad por examen fisico' %>
+								</div>
+								<div class="form-group">
+									<%= measurement.text_area :patologias, id: :measurement_patologias, class: 'form-control', placeholder: 'Listado de patologias' %>
+								</div>
+							</div>
 					</div>
-					<!--Panel 4-->
-					<div class="tab-pane fade" id="recien_nacido" role="tabpanel">
-						<div class="top-space">
-							<%= form.fields_for :measurements do |measurement|%>
-								<div class="col-sm-6 col-xs-12">
-									<div class="form-group text-left">
-										<label>Sexo del recien nacido</label>
-										<div class="radio radio-primary">
-											<label for="re_M">M
-												<%= form.radio_button :sexo, "M", :checked => true, id: "re_M" %>
-											</label>
-											<label for="re_f">F
-												<%= form.radio_button :sexo, "F", :checked => true, id: "re_f" %>
-											</label>			
-										</div>
-									</div>
-									<div class="form-group">
-										<%= measurement.text_field :peso_al_nacer, id: :measurement_peso_al_nacer, class: 'form-control', placeholder: 'Peso al nacer (gramos)' %>
-									</div>
-									<div class="form-group">
-										<%= measurement.number_field	 :talla_al_nacer, id: :measurement_talla_al_nacer, class: 'form-control', placeholder: 'Talla al nacer (centimetros)' %>
-									</div>
-								</div>
-								<div class="col-sm-6 col-xs-12">
-									<div class="form-group">
-										<%= measurement.text_field :semanas_amenorrea, id: :measurement_semanas_amenorrea, class: 'form-control', placeholder: 'semanas de amenorrea' %>
-									</div>
-									<div class="form-group">
-										<%= measurement.number_field :edad_por_ex_fisico, id: :measurement_edad_por_ex_fisico, class: 'form-control', placeholder: 'Edad por examen fisico' %>
-									</div>
-									<div class="form-group">
-										<%= measurement.text_area :patologias, id: :measurement_patologias, class: 'form-control', placeholder: 'Listado de patologias' %>
-									</div>
-								</div>
-							<% end %>
-						</div>
-				</div>
+			</div>
+		<% end %>
+		</div>
+	</div>
+	<div class="row text-center">
+	</div>
+	<div class="row text-center">
+		<div class="col-sm-6 col-xs-12">
+			<h3>Diagnostico de la consulta</h3>
+			<div class="form-group">
+				<%= form.text_area :diagnosis, id: :consultation_diagnosis, class: 'form-control', placeholder: 'Describa aqui el diagnostico de la consulta....' %>
 			</div>
 		</div>
-		<div class="row text-center">
-			
+		<div class="col-sm-6 col-xs-12">
+			<h3>Anotaciones</h3>
+			<%= form.text_area :annotations, id: :consultation_annotations, class: 'form-control', placeholder: 'Anotaciones sobre la consulta...' %>
 		</div>
-		<div class="row text-center">
-			<div class="col-sm-6 col-xs-12">
-				<h3>Diagnostico de la consulta</h3>
-				<div class="form-group">
-					<%= form.text_area :diagnosis, id: :consultation_diagnosis, class: 'form-control', placeholder: 'Describa aqui el diagnostico de la consulta....' %>
-				</div>
-			</div>
-			<div class="col-sm-6 col-xs-12">
-				<h3>Anotaciones</h3>
-				<%= form.text_area :annotations, id: :consultation_annotations, class: 'form-control', placeholder: 'Anotaciones sobre la consulta...' %>
-			</div>
-		</div>
-		<div class="form-group text-right">
-			<%= link_to 'Regresar a la lista de consultas', consultations_path, class: 'text-info btn-link' %>
-			<%= form.submit 'Guardar', class: 'btn btn-success' %>
-		</div>
-	<% end %>
-</div>
+	</div>
+	<div class="form-group text-right">
+		<%= link_to 'Regresar a la lista de consultas', consultations_path, class: 'text-info btn-link' %>
+		<%= form.submit 'Guardar', class: 'btn btn-success' %>
+	</div>
+<% end %>
+
 
 
 

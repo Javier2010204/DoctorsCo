@@ -5,7 +5,7 @@ class ConsultationsController < ApplicationController
 	# GET /consultations
 	# GET /consultations.json
 	def index
-		@consultations = Consultation.all
+		@consultations = current_user.consultations
 	end
 
 	# GET /consultations/1
@@ -27,7 +27,7 @@ class ConsultationsController < ApplicationController
 	# POST /consultations
 	# POST /consultations.json
 	def create
-		@consultation = Consultation.new(consultation_params)
+		@consultation = current_user.consultations.new(consultation_params)
 
 		respond_to do |format|
 			if @consultation.save
@@ -73,12 +73,16 @@ class ConsultationsController < ApplicationController
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def consultation_params
 			params.require(:consultation).permit(:patient_id, :other, :place, :subject, :annotations, :date, :diagnosis,
-													 measurements_attributes: [:id ,:height, :weight, :temperature, 
-													 :blood_pressure, :heart_rate, :breathing_frequency, :annotations, 
-													 :consultation_id, :_destroy])
+													 measurements_attributes: [:consultation_id,:height, :weight, :temperature, 
+                                :blood_pressure, :heart_rate, :breathing_frequency, :annotations, :talla,:fum, :antitetanica,
+                                :fuma, :semanas_amenorrea, :tension_arterial, :alt_uterina, :FCF, :edad_gestacion,
+                                :tamanio_fetal_acorde, :contracciones, :dilatacion_cerv, :tipo_terminacion, :tiempo_terminacion,
+                                :muerte_intraut, :episiotomia, :desgarros, :sexo, :peso_al_nacer, :talla_al_nacer,
+                                :edad_por_ex_fisico, :patologias], prescriptions_attributes: [:body, 
+													 :consultation_id])
 		end
 
 		def set_combo_values
-			@patients = Patient.all.order(:first_name, :last_name)
+			@patients = current_user.patients.order(:first_name, :last_name)
 		end
 end
