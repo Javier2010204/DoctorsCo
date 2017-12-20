@@ -1,0 +1,278 @@
+/* line 11, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.red {
+  background-color: #f44336;
+}
+
+/* line 15, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.red-text {
+  color: #f44336 !important;
+}
+
+/* line 11, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.blue {
+  background-color: #1565c0;
+}
+
+/* line 15, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.blue-text {
+  color: #1565c0 !important;
+}
+
+/* line 11, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.light-blue {
+  background-color: #2196F3;
+}
+
+/* line 15, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.light-blue-text {
+  color: #2196F3 !important;
+}
+
+/* line 11, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.blue-grey {
+  background-color: #37474f;
+}
+
+/* line 15, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.blue-grey-text {
+  color: #37474f !important;
+}
+
+/* line 11, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.green {
+  background-color: #1BBC9B;
+}
+
+/* line 15, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.green-text {
+  color: #1BBC9B !important;
+}
+
+/* line 11, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.black {
+  background-color: #000000;
+}
+
+/* line 15, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.black-text {
+  color: #000000 !important;
+}
+
+/* line 11, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.white {
+  background-color: #fff;
+}
+
+/* line 15, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.white-text {
+  color: #fff !important;
+}
+
+/* line 21, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* line 26, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.navbar {
+  margin: 0px;
+}
+
+/* line 29, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.full-height {
+  height: 100%;
+}
+
+/* line 32, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.big-padding {
+  padding: 2em 1.5em;
+}
+
+/* line 35, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 38, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 41, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.absolute {
+  position: absolute;
+}
+
+/* line 44, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.floating {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 100;
+}
+
+/* line 50, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.patient {
+  padding: 1em;
+  position: relative;
+}
+/* line 53, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.patient h1 {
+  padding-bottom: 10px;
+  border-bottom: solid 1px;
+  margin-bottom: 1em;
+}
+/* line 58, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.patient .actions {
+  right: 1em;
+  top: 10px;
+}
+
+/* line 63, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.ver-buscador {
+  width: 600px;
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+}
+/* line 68, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.ver-buscador h1 {
+  padding-bottom: 10px;
+  border-bottom: solid 1px;
+  margin-bottom: 1em;
+}
+/* line 73, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.ver-buscador .actions {
+  right: 1em;
+  top: 10px;
+}
+
+/* line 78, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.search-bar {
+  top: 0px;
+  left: 25%;
+  width: 50%;
+  z-index: 500;
+  transition: all 0.4s;
+}
+
+/* line 85, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.buscador-title {
+  line-height: 1.5em;
+}
+
+/* line 88, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.top-space {
+  margin-top: 1em;
+}
+
+/* line 91, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.big-top-space {
+  margin-top: 3em;
+}
+
+/* line 94, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.main-padding {
+  padding: 80px 30px;
+}
+
+/* line 97, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.circle-search {
+  border-radius: 50%;
+  padding: 5px 10px !important;
+  background-color: #F44336 !important;
+}
+
+/* line 102, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.little-text {
+  font-size: 1.2em;
+}
+
+/* line 105, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.alertas {
+  background-color: #F21550;
+}
+
+/* line 108, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.noticias {
+  background-color: #1AD9A2;
+}
+
+/* line 111, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.cover {
+  max-width: 100%;
+}
+
+/* line 114, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.font-logo {
+  font-family: 'Pacifico', cursive;
+}
+
+/* line 117, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.prueba {
+  font-size: 7em;
+}
+
+/* line 120, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.be-bigger {
+  font-size: 4em;
+}
+
+/* line 123, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.be-medium {
+  font-size: 2em;
+}
+
+/* line 126, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.be-small {
+  font-size: 1.3em;
+}
+
+/* line 129, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.special-logo {
+  border-bottom: solid 3px;
+  padding-bottom: 10px;
+}
+
+/* line 133, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.underline {
+  border-bottom: solid 1px;
+}
+
+/* line 136, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.inline {
+  display: inline-block;
+}
+
+/* line 139, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+.main-background {
+  background-image: url(/assets/doctor-67fd90876351fe0d56a7a7bac9a33dc56d0b291c6dbff7521a61a6f4cd58dd91.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: grey;
+  background-blend-mode: darken;
+}
+
+/* line 147, /home/javier/Documentos/Proyectos/Rails/Meriana/app/assets/stylesheets/common.scss */
+li.active {
+  border-bottom: 3px solid #37474f !important;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
