@@ -13,8 +13,6 @@ module Meriana
 		config.assets.precompile += %w(landing.css)
 		config.serve_static_assets = true
 
-		gmail_username: 'doctorsco.net@gmail.com'
-		gmail_password: 'Hola1234!'
 
 		# Settings in config/environments/* take precedence over those specified here.
 		# Application configuration should go into files in config/initializers
