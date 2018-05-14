@@ -10,7 +10,7 @@ gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 
 # Use Puma as the app server
-gem 'puma', '~> 3.10'
+gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -45,7 +45,7 @@ gem 'paperclip'
 
 group :development, :test do
 	# Call 'byebug' anywhere in the code to stop execution and get a debugger console
-	gem 'byebug', '~> 9.1.0', platforms: [:mri, :mingw, :x64_mingw]
+	gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 	# Adds support for Capybara system testing and selenium driver
 	gem 'capybara', '~> 2.13'
 	gem 'letter_opener'
