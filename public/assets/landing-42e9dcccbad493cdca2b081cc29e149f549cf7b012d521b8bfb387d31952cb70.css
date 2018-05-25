@@ -1,0 +1,503 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+
+
+ */
+
+/* line 1, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+/* line 6, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+body {
+  background-color: #eee;
+}
+
+/* line 9, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+h1 {
+  margin: 0;
+}
+
+/* line 12, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.logo-font {
+  font-family: 'Pacifico', sans-serif !important;
+}
+
+/* line 15, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.full-height {
+  height: 100%;
+}
+
+/* line 18, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.full-width {
+  width: 100%;
+}
+
+/* line 21, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.medium-width {
+  width: 80%;
+}
+
+/* line 24, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.no-margin {
+  margin: 0;
+}
+
+/* line 27, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.big-padding {
+  padding: 2em 1.5em;
+}
+
+/* line 30, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.large-padding {
+  padding: 15px 10px;
+}
+
+/* line 33, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.add_padding {
+  padding: 1em;
+}
+
+/* line 36, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 39, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 42, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 45, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.text-justify {
+  text-align: justify;
+}
+
+/* line 48, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.top-space {
+  margin-top: 1em;
+}
+
+/* line 51, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.bottom-space {
+  margin-bottom: 1em;
+}
+
+/* line 54, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.right-space {
+  margin-right: 1em;
+}
+
+/* line 57, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.left-space {
+  margin-left: 1em;
+}
+
+/* line 60, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.absolute {
+  position: absolute;
+}
+
+/* line 63, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.relative {
+  position: relative;
+}
+
+/* line 66, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.no-decoration {
+  text-decoration: none;
+}
+
+/* line 69, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.underline {
+  text-decoration: underline;
+}
+
+/* line 72, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.logo-font {
+  font-size: 5em;
+}
+
+/* line 75, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.big-font {
+  font-size: 2.1em;
+}
+
+/* line 78, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.medium-font {
+  font-size: 1.5em;
+}
+
+/* line 81, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.btn-floating {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 100;
+}
+
+/* line 87, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.actions {
+  right: 1em;
+  top: 10px;
+}
+
+/* line 91, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.notices {
+  background-color: #64FFDA;
+}
+
+/* line 94, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/common.scss */
+.top-border {
+  border-top: 1px solid black;
+}
+/* line 11, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.red {
+  background-color: #f44336;
+}
+
+/* line 15, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.red-text {
+  color: #f44336 !important;
+}
+
+/* line 11, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.blue {
+  background-color: #1565c0;
+}
+
+/* line 15, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.blue-text {
+  color: #1565c0 !important;
+}
+
+/* line 11, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.light-blue {
+  background-color: #2196F3;
+}
+
+/* line 15, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.light-blue-text {
+  color: #2196F3 !important;
+}
+
+/* line 11, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.blue-grey {
+  background-color: #37474f;
+}
+
+/* line 15, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.blue-grey-text {
+  color: #37474f !important;
+}
+
+/* line 11, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.green {
+  background-color: #1BBC9B;
+}
+
+/* line 15, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.green-text {
+  color: #1BBC9B !important;
+}
+
+/* line 11, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.black {
+  background-color: #000000;
+}
+
+/* line 15, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.black-text {
+  color: #000000 !important;
+}
+
+/* line 11, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.white {
+  background-color: #fff;
+}
+
+/* line 15, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.white-text {
+  color: #fff !important;
+}
+
+/* line 21, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* line 26, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.navbar {
+  margin: 0px;
+}
+
+/* line 29, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.full-height {
+  height: 100%;
+}
+
+/* line 32, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.big-padding {
+  padding: 2em 1.5em;
+}
+
+/* line 35, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 38, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 41, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.absolute {
+  position: absolute;
+}
+
+/* line 44, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.floating {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 100;
+}
+
+/* line 50, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.patient {
+  padding: 1em;
+  position: relative;
+}
+/* line 53, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.patient h1 {
+  padding-bottom: 10px;
+  border-bottom: solid 1px;
+  margin-bottom: 1em;
+}
+/* line 58, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.patient .actions {
+  right: 1em;
+  top: 10px;
+}
+
+/* line 63, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.ver-buscador {
+  width: 600px;
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+}
+/* line 68, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.ver-buscador h1 {
+  padding-bottom: 10px;
+  border-bottom: solid 1px;
+  margin-bottom: 1em;
+}
+/* line 73, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.ver-buscador .actions {
+  right: 1em;
+  top: 10px;
+}
+
+/* line 78, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.search-bar {
+  top: 0px;
+  left: 25%;
+  width: 50%;
+  z-index: 500;
+  transition: all 0.4s;
+}
+
+/* line 85, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.buscador-title {
+  line-height: 1.5em;
+}
+
+/* line 88, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.top-space {
+  margin-top: 1em;
+}
+
+/* line 91, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.big-top-space {
+  margin-top: 3em;
+}
+
+/* line 94, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.main-padding {
+  padding: 80px 30px;
+}
+
+/* line 97, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.circle-search {
+  border-radius: 50%;
+  padding: 5px 10px !important;
+  background-color: #F44336 !important;
+}
+
+/* line 102, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.little-text {
+  font-size: 1.2em;
+}
+
+/* line 105, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.alertas {
+  background-color: #F21550;
+}
+
+/* line 108, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.noticias {
+  background-color: #1AD9A2;
+}
+
+/* line 111, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.cover {
+  max-width: 100%;
+}
+
+/* line 114, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.font-logo {
+  font-family: 'Pacifico', cursive;
+}
+
+/* line 117, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.prueba {
+  font-size: 7em;
+}
+
+/* line 120, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.be-bigger {
+  font-size: 4em;
+}
+
+/* line 123, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.be-medium {
+  font-size: 2em;
+}
+
+/* line 126, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.be-small {
+  font-size: 1.3em;
+}
+
+/* line 129, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.special-logo {
+  border-bottom: solid 3px;
+  padding-bottom: 10px;
+}
+
+/* line 133, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.underline {
+  border-bottom: solid 1px;
+}
+
+/* line 136, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.inline {
+  display: inline-block;
+}
+
+/* line 139, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+.main-background {
+  background-image: url(/assets/doctor-67fd90876351fe0d56a7a7bac9a33dc56d0b291c6dbff7521a61a6f4cd58dd91.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: grey;
+  background-blend-mode: darken;
+}
+
+/* line 147, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/colors_landing.scss */
+li.active {
+  border-bottom: 3px solid #37474f !important;
+}
+/* line 4, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.demo-card-wide > .mdl-card__title {
+  color: white;
+  height: 176px;
+}
+
+/* line 8, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.consultas {
+  background: url(/assets/consultas-213be1589f2ebca832ad1e48ce02e037b12bf52223b5ea3a9a04c7b53a9da801.png) center/cover;
+}
+
+/* line 11, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.perfil {
+  background: url(/assets/perfil-69b0ac7fcd45fa1e77ac34e44a112751bf0969a66e56557f48d1b1964d8d0d93.png) center/cover;
+}
+
+/* line 14, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.adaptable {
+  background: url(/assets/prueba-c5136336f252270d126dd6538593f1eddf5cc6cd5bbd05548a1be71ac4af5be2.png) center/cover;
+}
+
+/* line 17, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.demo-card-wide > .mdl-card__menu {
+  color: white;
+}
+
+/* line 20, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.logo {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* line 24, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.redes {
+  font-size: 2.2em !important;
+  margin-right: 10px;
+}
+
+/* line 28, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.no-decoration {
+  text-decoration: none !important;
+}
+
+/* line 31, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.no-list {
+  list-style: none;
+}
+
+/* line 34, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.bottom-space {
+  margin-bottom: 3em;
+}
+
+/* line 37, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.mdl-card__media {
+  background-color: none !important;
+}
+
+/* line 40, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.suscripcion-titulo {
+  padding: 1em 0 0 0;
+}
+
+/* line 43, /Users/javier/Documents/GitHub/DoctorsCo/app/assets/stylesheets/structure.scss */
+.large-padding {
+  padding: 6px 12px;
+}
