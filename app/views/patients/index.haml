@@ -1,0 +1,38 @@
+.row.big-padding.blue.center-xs.white-text
+	%h1 Listado de pacientes
+.row.top-space.full-height.center-xs
+	.col-xs-12.col-sm-12.col-lg-8
+		.box
+		%table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
+			%thead
+				%tr
+					%th.mdl-data-table__cell--non-numeric Nombre
+					%th.mdl-data-table__cell--non-numeric Pais
+					%th.mdl-data-table__cell--non-numeric Edad
+					%th.mdl-data-table__cell--non-numeric Sexo
+					%th.mdl-data-table__cell--non-numeric Telefono
+					%th.mdl-data-table__cell--non-numeric Email
+					%th.mdl-data-table__cell--non-numeric Acciones
+			%tbody
+			-@patients.each do |patient|
+				%tr
+					%td 
+						= link_to patient.first_name, patient 
+						= link_to patient.last_name, patient
+					%td 
+						=patient.country 
+					%td 
+						=patient.age
+					%td
+						=patient.sex
+					%td
+						=patient.phone
+					%td
+						=patient.email
+					%td
+						=link_to 'Ver', patient, class: 'pink-text'
+						=link_to 'Editar', edit_patient_path(patient),class: 'pink-text'
+						=link_to 'Eliminar', patient, method: :delete, data:{confirm: 'Seguro que desea realizar esta accion? se eliminara de forma permanente'},class: 'pink-text'
+.btn-floating
+	=button_to new_patient_path(), method: :get, class: "mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect" do
+		%i.material-icons add

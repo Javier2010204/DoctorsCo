@@ -1,0 +1,75 @@
+.row.center-xs.large-padding
+	.col-xs-12.col-sm-8.col-lg-6
+		.box.mdl-shadow--2dp.white.relative.add_padding
+			.actions.absolute
+				=link_to "Editar", edit_patient_path(@patient), class: 'indigo-text'
+			%h3
+				= @patient.first_name 
+				= @patient.last_name
+			.mdl-tabs.mdl-js-tabs.mdl-ripple-effect
+				.mdl-tabs__tab-bar
+					%a.mdl-tabs__tab.is-active{href: '#datos-generales'} Datos Generales
+					%a.mdl-tabs__tab{href: '#cuadro-clinico'} Cuadro Clinico
+				.mdl-tabs__panel.is-active#datos-generales
+					.top-space.large-padding.text-justify
+						%p
+							%b Edad
+							=@patient.age
+						%p
+							%b Direccion
+							= @patient.address
+						%p
+							%b Telefono
+							= @patient.phone
+						%p
+							%b Email
+							= @patient.email
+						%p
+							%b Pais
+							= @patient.country
+						%p
+						%p
+				.mdl-tabs__panel#cuadro-clinico
+					.top-space.large-padding.text-justify
+						%p
+							%b Peso
+							=@patient.weight
+						%p
+							%b Talla
+							= @patient.size
+						%p
+							%b Alergias
+							= @patient.allergies
+						%p
+							%b Medicamentos
+							= @patient.medicines
+						%p
+							%b Enfermedades
+							= @patient.diseases
+			=link_to 'Regresar a la lista de pacientes', patients_path, class: 'mdl-button mdl-js-button mdl-button--accent'
+			=link_to 'Lista de consultas del paciente', "#{@patient.id}/show_consultations", class: 'mdl-button mdl-js-button mdl-button--colored'
+.row.center-xs
+	.col-xs-12.col-sm-8.col-lg-6
+		.box.white.mdl-shadow--2dp.relative
+			- if @ultima_consulta.nil?
+				%h4 No hay consultas del paciente
+				=link_to 'Agregar nueva', new_consultation_path(), class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent bottom-space'
+			- else
+				.actions.absolute
+					%strong= @ultima_consulta.fecha.strftime('%d-%m-%Y')
+				%h4 Ultima consulta  
+				.row.center-xs.large-padding
+					.col-xs-12.col-sm-6
+						.box
+							%strong Antecedentes
+							%p= @ultima_consulta.antecedentes
+							%strong Diagnostico
+							%p= @ultima_consulta.diagnostico
+					.col-xs-12.col-sm-6
+						.box
+							%strong Tratamiento
+							%p= @ultima_consulta.tratamiento
+							%strong Receta
+							%p= @ultima_consulta.receta
+						=link_to 'Agregar nueva', new_consultation_path(), class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
+  

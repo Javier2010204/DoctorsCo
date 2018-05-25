@@ -24,5 +24,6 @@ class Patient < ApplicationRecord
   belongs_to :user
   has_many :consultations
   has_many :events
+  has_many :appoiments
   validates :first_name, presence: true
 end

@@ -1,0 +1,52 @@
+<%= form_with(model: medical_history, local: true) do |form| %>
+  <% if medical_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medical_history.errors.count, "error") %> prohibited this medical_history from being saved:</h2>
+
+      <ul>
+      <% medical_history.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.number_field :weight, id: :medical_history_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size, id: :medical_history_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allergies %>
+    <%= form.text_area :allergies, id: :medical_history_allergies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :medicine %>
+    <%= form.text_area :medicine, id: :medical_history_medicine %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diseases %>
+    <%= form.text_area :diseases, id: :medical_history_diseases %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :medical_history_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.text_field :patient_id, id: :medical_history_patient_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

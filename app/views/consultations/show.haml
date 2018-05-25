@@ -1,0 +1,62 @@
+.row.center-xs.large-padding
+  .col-xs-12.col-sm-8.col-lg-6
+    .box.white.mdl-shadow--2dp.relative.add_padding
+      .actions.absolute
+        %strong
+        =link_to "Editar", edit_consultation_path(@consultation), class: "indigo-text"
+      %h3
+        = link_to @consultation.patient.first_name, @consultation.patient
+        = link_to @consultation.patient.last_name, @consultation.patient
+      .row
+        .col-xs-12.col-sm-6
+          .box
+            %h4.light-blue-text Datos Generales
+            %p Telefono: #{@consultation.patient.phone}
+            %p Direccion: #{@consultation.patient.address}
+            %p Edad: #{@consultation.patient.age}
+            %p Pais: #{@consultation.patient.country}
+        .col-xs-12.col-sm-6
+          .box
+            %h4.light-blue-text Cuadro Clinico
+            %p Peso: #{@consultation.patient.weight}
+            %p Talla: #{@consultation.patient.size}
+            %strong Alegias
+            %p=@consultation.patient.allergies
+            %strong Medicinas
+            %p=@consultation.patient.medicines
+.row.center-xs.large-padding
+  .col-xs-12.col-sm-8.col-lg-6
+    .box.white.mdl-shadow--2dp.add_padding
+      .mdl-tabs.mdl-js-tabs.mdl-ripple-effect
+        .mdl-tabs__tab-bar
+          %a.mdl-tabs__tab.is-active{href: '#sintomas'} Sintomas
+          %a.mdl-tabs__tab{href: '#tratamiento'} Diagnostico
+          %a.mdl-tabs__tab{href: '#receta'} Receta
+        .mdl-tabs__panel.is-active#sintomas
+          .top-space.text-justify.large-padding
+            %p
+              %b Motivo
+              =@consultation.motivo
+            %p
+              %b Antecedentes
+              =@consultation.antecedentes
+            %p
+              %b Sintomas
+              =@consultation.sintomas
+        .mdl-tabs__panel#tratamiento
+          .top-space.text-justify.large-padding
+            %p
+              %b Diagnostico
+              =@consultation.diagnostico
+            %p
+              %b Tratamiento
+              =@consultation.tratamiento
+        .mdl-tabs__panel#receta
+          .top-space.text-justify.large-padding
+            %p
+              %b Receta
+              =@consultation.receta
+            %p
+              %b Anotaciones
+              =@consultation.anotaciones
+

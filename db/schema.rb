@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219134015) do
+ActiveRecord::Schema.define(version: 20180525183515) do
+
+  create_table "appoiments", force: :cascade do |t|
+    t.date "date"
+    t.time "hour"
+    t.text "annotations"
+    t.integer "patient_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_appoiments_on_patient_id"
+    t.index ["user_id"], name: "index_appoiments_on_user_id"
+  end
 
   create_table "consultations", force: :cascade do |t|
     t.integer "patient_id"
@@ -23,6 +35,15 @@ ActiveRecord::Schema.define(version: 20171219134015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.text "tratamiento"
+    t.text "sintomas"
+    t.text "antecedentes"
+    t.text "receta"
+    t.text "examen_fisico"
+    t.datetime "fecha"
+    t.text "motivo"
+    t.text "diagnostico"
+    t.text "anotaciones"
     t.index ["patient_id"], name: "index_consultations_on_patient_id"
     t.index ["user_id"], name: "index_consultations_on_user_id"
   end
@@ -48,8 +69,56 @@ ActiveRecord::Schema.define(version: 20171219134015) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-# Could not dump table "measurements" because of following StandardError
-#   Unknown type 'tipo' for column 'nombre_campo'
+  create_table "measurements", force: :cascade do |t|
+    t.integer "consultation_id"
+    t.decimal "height"
+    t.decimal "weight"
+    t.integer "temperature"
+    t.string "blood_pressure"
+    t.integer "heart_rate"
+    t.integer "breathing_frequency"
+    t.datetime "date"
+    t.text "annotations"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "talla"
+    t.date "fum"
+    t.string "antitetanica"
+    t.string "fuma"
+    t.string "semanas_amenorrea"
+    t.integer "tension_arterial"
+    t.decimal "alt_uterina"
+    t.integer "FCF"
+    t.integer "edad_gestacion"
+    t.string "tamanio_fetal_acorde"
+    t.string "contracciones"
+    t.decimal "dilatacion_cerv"
+    t.decimal "tipo_terminacion"
+    t.datetime "tiempo_terminacion"
+    t.string "muerte_intraut"
+    t.string "episiotomia"
+    t.string "desgarros"
+    t.string "sexo"
+    t.decimal "peso_al_nacer"
+    t.integer "talla_al_nacer"
+    t.string "edad_por_ex_fisico"
+    t.text "patologias"
+    t.index ["consultation_id"], name: "index_measurements_on_consultation_id"
+  end
+
+  create_table "medical_histories", force: :cascade do |t|
+    t.integer "weight"
+    t.decimal "size"
+    t.text "allergies"
+    t.text "medicine"
+    t.text "diseases"
+    t.integer "user_id"
+    t.integer "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_medical_histories_on_patient_id"
+    t.index ["user_id"], name: "index_medical_histories_on_user_id"
+  end
 
   create_table "patients", force: :cascade do |t|
     t.integer "code"
@@ -67,6 +136,14 @@ ActiveRecord::Schema.define(version: 20171219134015) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.integer "weight"
+    t.string "size"
+    t.text "allergies"
+    t.text "medicines"
+    t.text "diseases"
+    t.text "departament"
+    t.string "state", default: "active"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
@@ -109,10 +186,10 @@ ActiveRecord::Schema.define(version: 20171219134015) do
     t.string "phone"
     t.string "address"
     t.string "specialty"
+    t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string "avatar_file_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

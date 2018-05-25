@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
  
+  resources :appoiments
+  resources :medical_histories
 	authenticated :user do 
 		root to: 'home#index'
 		get 'search/create'
-		get 'search/new'
 		resources :patients
 		resources :consultations
 		resources :measurements

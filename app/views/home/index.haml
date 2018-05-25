@@ -1,0 +1,35 @@
+.row.center-xs
+	.col-xs-12
+		.box.blue.white-text.large-padding
+			%h2 Bienvenido #{@user.email}
+.row.center-xs.full-height.top-space
+	.col-xs-12.col-sm-6.col-lg-6
+		.box.white.mdl-shadow--2dp.add_padding	
+			%h3.green-text.underline Citas de hoy
+			-@appointments.each do |appointment|
+				-if appointment.date == Date.today
+					%p.top-border
+					%h3
+						=appointment.patient.first_name
+						=appointment.patient.last_name
+					%p
+						=appointment.date
+					%p 
+						=appointment.hour.strftime('%H:%M')
+					%p
+						=link_to 'Mostrar', appointment, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
+				-else
+					%h4.dark-grey-text
+						No hay citas para hoy
+					.text-center
+						=link_to 'Agregar nueva cita', new_appointment_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
+	.col-xs-12.col-sm-4
+		.box.white.mdl-shadow--2dp.add_padding
+			=form_tag "search/create", method: :get, remote: true do
+				.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+					=label_tag 'Que paciente desea buscar?',nil, class: 'mdl-textfield__label blue-text'
+					=text_field_tag :keyword, nil, id: "buscador", class: 'mdl-textfield__input'
+				.actions.right-text
+					=content_tag :button, type: :submit, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' do 
+						Buscar
+				.top-space#resultados

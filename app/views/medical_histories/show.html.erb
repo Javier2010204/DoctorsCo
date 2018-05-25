@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @medical_history.weight %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @medical_history.size %>
+</p>
+
+<p>
+  <strong>Allergies:</strong>
+  <%= @medical_history.allergies %>
+</p>
+
+<p>
+  <strong>Medicine:</strong>
+  <%= @medical_history.medicine %>
+</p>
+
+<p>
+  <strong>Diseases:</strong>
+  <%= @medical_history.diseases %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @medical_history.user %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @medical_history.patient %>
+</p>
+
+<%= link_to 'Edit', edit_medical_history_path(@medical_history) %> |
+<%= link_to 'Back', medical_histories_path %>

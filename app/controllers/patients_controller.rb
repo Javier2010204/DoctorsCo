@@ -11,6 +11,7 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
+    @ultima_consulta = Patient.find(params[:id]).consultations.last
   end
 
   # GET /patients/new
@@ -70,6 +71,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:code, :first_name, :last_name, :identification_number, :email, :phone, :country, :city, :age, :birthdate, :sex, :annotations, :user_id)
+      params.require(:patient).permit(:first_name, :last_name, :address, :age, :sex, :departament, :city, :country, :email, :phone, :state, :weight, :size, :allergies, :medicines, :diseases)
     end
 end

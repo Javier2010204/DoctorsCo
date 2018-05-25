@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 	
 	def index
 		@user = current_user
-		@events = current_user.events
+  		@appointments = current_user.appoiments
 	end
 
 	def unregistered
@@ -11,13 +11,11 @@ class HomeController < ApplicationController
 	end
 
 	def suscribe
-
+		
 	end
 
 	private
-
 		def set_layout
 			"structure"
-		end
-			
+		end		
 end

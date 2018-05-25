@@ -1,0 +1,19 @@
+.row.center-xs.top-border.top-space 
+	.col-xs-12.col-sm-8
+		.box
+			%strong=link_to patient.first_name, patient
+			%strong=link_to patient.last_name, patient
+			.row
+				.col-xs-12.col-sm-6.col-lg-8
+					.box
+						%p telefono: #{patient.phone}
+						%p edad: #{patient.age}
+						%p pais: #{patient.country}
+				.col-xs-12.col-sm-6.col-lg-4
+					.box
+						%p peso: #{patient.weight}
+						%p talla: #{patient.size}
+						%strong medicamentos: 
+						%p= patient.medicines
+			.actions.center-xs
+				=link_to "mostrar", patient, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'

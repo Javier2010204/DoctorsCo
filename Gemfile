@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks'
 
 #gem devise for authentication
-gem 'devise'
+gem 'devise', '~> 4.4', '>= 4.4.3'
 # Use annotate for annotation in the models
 gem 'annotate'
 #Best in place
@@ -35,6 +35,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip'
+gem 'haml-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

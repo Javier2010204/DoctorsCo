@@ -1,0 +1,39 @@
+= form_for @consultation do |f|
+  - if @consultation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@consultation.errors.count, "error")} prohibited this consultation from being saved:"
+      %ul
+        - @consultation.errors.full_messages.each do |message|
+          %li= message
+
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    = f.label :fecha
+    = f.datetime_select :fecha
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    = f.label :patient
+    = f.collection_select :patient_id, @patients, :id, :last_name, {selected: @consultation.patient_id, include_blank: false}
+  %h4.black-text Motivo de la consulta
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
+    = f.text_area :motivo, class: 'mdl-textfield__input'
+    = f.label :motivo, class: 'mdl-textfield__label'
+  %h4.pink-text Antecedentes
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
+    = f.text_area :antecedentes, class: 'mdl-textfield__input'
+    = f.label :antecedentes, class: 'mdl-textfield__label'
+  %h4.green-text Examen Fisico
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
+    = f.text_area :sintomas, class: 'mdl-textfield__input'
+    = f.label :sintomas, class: 'mdl-textfield__label'
+  %h4.light-blue-text Conclusiones 
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
+    = f.text_area :diagnostico, class: 'mdl-textfield__input'
+    = f.label :diagnostico, class: 'mdl-textfield__label'
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
+    = f.text_area :tratamiento, class: 'mdl-textfield__input'
+    = f.label :tratamiento, class: 'mdl-textfield__label'
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
+    = f.text_area :receta, class: 'mdl-textfield__input'
+    = f.label :receta, class: 'mdl-textfield__label'
+  .actions.text-right
+    =link_to 'Regresar a la lista de consultas', consultations_path
+    = f.submit 'Guardar', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'

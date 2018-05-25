@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-05-22
+  hour: 2018-05-22 08:47:14
+  annotations: MyText
+  patient: one
+  user: one
+
+two:
+  date: 2018-05-22
+  hour: 2018-05-22 08:47:14
+  annotations: MyText
+  patient: two
+  user: two
