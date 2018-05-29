@@ -11,17 +11,17 @@
             %th.mdl-data-table__cell--non-numeric Hora
             %th.mdl-data-table__cell--non-numeric Acciones
         %tbody
-          -@appoiments.each do |appointment|
+          -@appoiments.each do |appoiment|
             %tr
               %td
-                =appointment.patient.first_name 
-                =appointment.patient.last_name
+                =appoiment.patient.first_name 
+                =appoiment.patient.last_name
               %td
-                =appointment.date
+                =appoiment.date
               %td
-                =appointment.hour.strftime('%H:%M')
+                =appoiment.hour.strftime('%H:%M')
               %td
-                =link_to "Mostrar", appointment, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
+                =link_to "Mostrar", appoiment, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
 .btn-floating
   =button_to new_appoiment_path(), method: :get, class: "mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-ripple-effect" do
     %i.material-icons add

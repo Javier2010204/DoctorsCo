@@ -2,34 +2,34 @@ class AppoimentsController < ApplicationController
   before_action :set_appoiment, only: [:show, :edit, :update, :destroy]
   before_action :set_combo_values, only: [:new, :edit]
 
-  # GET /appoiments
-  # GET /appoiments.json
+  # GET /appointments
+  # GET /appointments.json
   def index
-    @appoiments = Appoiment.all
+    @appoiments = current_user.appoiments
   end
 
-  # GET /appoiments/1
-  # GET /appoiments/1.json
+  # GET /appointments/1
+  # GET /appointments/1.json
   def show
   end
 
-  # GET /appoiments/new
+  # GET /appointments/new
   def new
     @appoiment = Appoiment.new
   end
 
-  # GET /appoiments/1/edit
+  # GET /appointments/1/edit
   def edit
   end
 
-  # POST /appoiments
-  # POST /appoiments.json
+  # POST /appointments
+  # POST /appointments.json
   def create
-    @appoiment = Appoiment.new(appoiment_params)
+    @appoiment = current_user.appoiments.new(appoiment_params)
 
     respond_to do |format|
       if @appoiment.save
-        format.html { redirect_to @appoiment, notice: 'Appoiment was successfully created.' }
+        format.html { redirect_to @appoiment, notice: 'Appointment was successfully created.' }
         format.json { render :show, status: :created, location: @appoiment }
       else
         format.html { render :new }
@@ -38,12 +38,12 @@ class AppoimentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /appoiments/1
-  # PATCH/PUT /appoiments/1.json
+  # PATCH/PUT /appointments/1
+  # PATCH/PUT /appointments/1.json
   def update
     respond_to do |format|
       if @appoiment.update(appoiment_params)
-        format.html { redirect_to @appoiment, notice: 'Appoiment was successfully updated.' }
+        format.html { redirect_to @appoiment, notice: 'Appointment was successfully updated.' }
         format.json { render :show, status: :ok, location: @appoiment }
       else
         format.html { render :edit }
@@ -52,12 +52,12 @@ class AppoimentsController < ApplicationController
     end
   end
 
-  # DELETE /appoiments/1
-  # DELETE /appoiments/1.json
+  # DELETE /appointments/1
+  # DELETE /appointments/1.json
   def destroy
     @appoiment.destroy
     respond_to do |format|
-      format.html { redirect_to appoiments_url, notice: 'Appoiment was successfully destroyed.' }
+      format.html { redirect_to appoiments_url, notice: 'Appointment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

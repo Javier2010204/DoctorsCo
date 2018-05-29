@@ -1,9 +1,9 @@
 = form_for @appoiment do |f|
   - if @appoiment.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@appointment.errors.count, "error")} prohibited this appointment from being saved:"
+      %h2= "#{pluralize(@appoiment.errors.count, "error")} prohibited this appointment from being saved:"
       %ul
-        - @appointment.errors.full_messages.each do |message|
+        - @appoiment.errors.full_messages.each do |message|
           %li= message
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
     =f.collection_select :patient_id, @patients, :id, :last_name, {selected: @appoiment.patient_id, include_blank: false}

@@ -2,19 +2,19 @@
 	.col-xs-12.col-sm-8.col-lg-6
 		.box.mdl-shadow--2dp.white.relative.add_padding
 			.actions.absolute
-				=link_to 'Editar', edit_appointment_path(@appointment)
-				=link_to 'Eliminar', @appointment, method: :delete, data:{confirm: 'Seguro que desea eliminar la cita? se eliminara de forma permanente.'}
+				=link_to 'Editar', edit_appoiment_path(@appoiment)
+				=link_to 'Eliminar', @appoiment, method: :delete, data:{confirm: 'Seguro que desea eliminar la cita? se eliminara de forma permanente.'}
 			%h3.underline
-				= link_to @appointment.patient.first_name, @appointment.patient
-				= link_to @appointment.patient.last_name, @appointment.patient
+				= link_to @appoiment.patient.first_name, @appoiment.patient
+				= link_to @appoiment.patient.last_name, @appoiment.patient
 			.text-center
 				%p.big-font
 					Fecha:
-					%strong= @appointment.date
+					%strong= @appoiment.date
 				%p.big-font
 					Hora:
-					%strong= @appointment.hour.strftime('%H:%M')
+					%strong= @appoiment.hour.strftime('%H:%M')
 			.top-space
-				%p= @appointment.annotations
+				%p= @appoiment.annotations
 			
-			=link_to 'Regresar a la lista', appointments_path, class: 'mdl-button mdl-js-button mdl-button--accent'
+			=link_to 'Regresar a la lista', appoiments_path, class: 'mdl-button mdl-js-button mdl-button--accent'

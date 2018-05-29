@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 	
 	def index
 		@user = current_user
-  		@appointments = current_user.appoiments
+  		@appoiments = current_user.appoiments
 	end
 
 	def unregistered
