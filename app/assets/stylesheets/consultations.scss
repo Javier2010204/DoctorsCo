@@ -1,3 +1,25 @@
 // Place all the styles related to the Consultations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul.ui-autocomplete {
+  position: absolute !important;
+  list-style: none ;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: solid 1px #999 !important;
+  cursor: default !important;
+  li {
+    background-color: #FFF !important;
+    border-top: solid 1px #DDD !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    a {
+      color: #000 !important;
+      display: block !important;
+      padding: 3px !important;
+    }
+    a.ui-state-hover, a.ui-state-active {
+      background-color: #FFFCB2 !important;
+    }
+  }
+}

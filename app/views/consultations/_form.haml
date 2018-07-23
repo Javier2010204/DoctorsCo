@@ -11,7 +11,8 @@
     = f.datetime_select :fecha
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
     = f.label :patient
-    = f.collection_select :patient_id, @patients, :id, :last_name, {selected: @consultation.patient_id, include_blank: false}
+    = f.collection_select :patient_id, Patient.order(:first_name), :id, :first_name
+    = f.text_field :patient_name
   %h4.black-text Motivo de la consulta
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
     = f.text_area :motivo, class: 'mdl-textfield__input'
@@ -24,7 +25,7 @@
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
     = f.text_area :sintomas, class: 'mdl-textfield__input'
     = f.label :sintomas, class: 'mdl-textfield__label'
-  %h4.light-blue-text Conclusiones 
+  %h4.light-blue-text Conclusiones
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
     = f.text_area :diagnostico, class: 'mdl-textfield__input'
     = f.label :diagnostico, class: 'mdl-textfield__label'

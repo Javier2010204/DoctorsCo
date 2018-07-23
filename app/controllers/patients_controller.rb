@@ -8,6 +8,11 @@ class PatientsController < ApplicationController
     @patients = current_user.patients
   end
 
+  def prueba
+    @patients = Patient.where(user_id: current_user).order(:first_name).where("first_name like ?", "%#{params[:term]}%")
+    render json: @patients.map(&:first_name)
+  end
+
   # GET /patients/1
   # GET /patients/1.json
   def show
