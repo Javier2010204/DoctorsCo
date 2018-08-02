@@ -17,7 +17,6 @@
 			-@patients.each do |patient|
 				%tr
 					%td 
-						= link_to patient.first_name, patient 
 						= link_to patient.last_name, patient
 					%td 
 						=patient.country 

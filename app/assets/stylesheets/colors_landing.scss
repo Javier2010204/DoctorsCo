@@ -1,11 +1,17 @@
 $colors : (
 	red: #f44336,
 	blue: #1565c0,
-	light-blue: #2196F3,
+	light-blue: #2196f3,
 	blue-grey: #37474f,
 	green: #1BBC9B,
 	black: #000000,
-	white: #fff
+	white: #fff,
+	special-blue: #2465AB,
+	special-teal: #0D5C63,
+	special-green: #4CE0B4,
+	special-light-green: #72EDDB,
+	special-light-blue: #42CBFC,
+	special-red: #ED536A
 );
 @each $color_name, $color in $colors{
 	.#{$color_name}{
@@ -18,132 +24,3 @@ $colors : (
 }
 
 
-html,body{
-	margin: 0;
-	padding: 0;
-	height: 100%;
-}
-.navbar{
-	margin: 0px;
-}
-.full-height{
-	height: 100%;
-}
-.big-padding{
-	padding: 2em 1.5em;
-}
-.text-right{
-	text-align: right;
-}
-.text-left{
-	text-align: left;
-}
-.absolute{
-	position: absolute;
-}
-.floating{
-	position: fixed;
-	bottom: 2em;
-	right: 2em;
-	z-index: 100;
-}
-.patient{
-	padding: 1em;
-	position: relative;
-	h1{
-		padding-bottom: 10px;
-		border-bottom: solid 1px;
-		margin-bottom: 1em;
-	}
-	.actions{
-		right: 1em;
-		top: 10px;
-	}
-}
-.ver-buscador{
-	width: 600px;
-	max-width: 100%;
-	padding: 1em;
-	position: relative;
-	h1{
-		padding-bottom: 10px;
-		border-bottom: solid 1px;
-		margin-bottom: 1em;
-	}
-	.actions{
-		right: 1em;
-		top: 10px;
-	}	
-}
-.search-bar{
-	top: 0px;
-	left: 25%;
-	width: 50%;
-	z-index: 500;
-	transition: all 0.4s;
-}
-.buscador-title{
-	line-height: 1.5em;
-}
-.top-space{
-	margin-top: 1em;
-}
-.big-top-space{
-	margin-top: 3em;
-}
-.main-padding{
-	padding: 80px 30px;
-}
-.circle-search{
-	border-radius: 50%;
-	padding: 5px 10px !important;
-	background-color: #F44336 !important;
-}
-.little-text{
-	font-size: 1.2em;
-}	
-.alertas{
-	background-color: #F21550;
-}
-.noticias{
-	background-color: #1AD9A2;
-}
-.cover{
-	max-width: 100%;
-}
-.font-logo{
-	font-family: 'Pacifico', cursive;
-}
-.prueba{
-	font-size: 7em;
-}
-.be-bigger{
-	font-size: 4em;
-}
-.be-medium{
-	font-size: 2em;
-}
-.be-small{
-	font-size: 1.3em;
-}
-.special-logo{
-	border-bottom: solid 3px;
-	padding-bottom: 10px;
-}
-.underline{
-	border-bottom: solid 1px;
-}
-.inline{
-	display: inline-block;
-}
-.main-background{
-	background-image: url(#{asset_path('doctor.jpg')});
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-color: grey;
-	background-blend-mode: darken;
-}
-li.active{
-	border-bottom: 3px solid #37474f !important;
-}

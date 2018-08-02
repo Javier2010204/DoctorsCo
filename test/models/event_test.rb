@@ -3,12 +3,13 @@
 # Table name: events
 #
 #  id          :integer          not null, primary key
-#  date        :datetime
 #  annotations :text
 #  patient_id  :integer
 #  user_id     :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  date        :date
+#  time        :time
 #
 
 require 'test_helper'

@@ -5,12 +5,17 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
+    palabra = "%#{params[:term]}%"
     @patients = current_user.patients
+    @pacientes = current_user.patients.where("last_name like ? ", palabra)
+    respond_to do |format|
+      format.html{@patients}
+      format.json{render json: @pacientes.map(&:last_name)}
+    end
   end
 
-  def prueba
-    @patients = Patient.where(user_id: current_user).order(:first_name).where("first_name like ?", "%#{params[:term]}%")
-    render json: @patients.map(&:first_name)
+  def search
+    
   end
 
   # GET /patients/1
@@ -76,6 +81,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:first_name, :last_name, :address, :age, :sex, :departament, :city, :country, :email, :phone, :state, :weight, :size, :allergies, :medicines, :diseases)
+      params.require(:patient).permit(:last_name, :address, :age, :sex, :departament, :city, :country, :email, :phone, :state, :weight, :size, :allergies, :medicines, :diseases)
     end
 end

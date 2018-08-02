@@ -2,16 +2,26 @@
 #
 # Table name: consultations
 #
-#  id          :integer          not null, primary key
-#  patient_id  :integer
-#  other       :string
-#  place       :string
-#  subject     :string
-#  annotations :text
-#  date        :datetime
-#  diagnosis   :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id            :integer          not null, primary key
+#  patient_id    :integer
+#  other         :string
+#  place         :string
+#  subject       :string
+#  annotations   :text
+#  date          :datetime
+#  diagnosis     :text
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  user_id       :integer
+#  tratamiento   :text
+#  sintomas      :text
+#  antecedentes  :text
+#  receta        :text
+#  examen_fisico :text
+#  fecha         :datetime
+#  motivo        :text
+#  diagnostico   :text
+#  anotaciones   :text
 #
 
 class Consultation < ApplicationRecord
@@ -25,4 +35,11 @@ class Consultation < ApplicationRecord
 
 	#, reject_if: proc {|attr| attr[:heigth, :weight, annotations, blod_pressure, breathing_rate, etc...].blank ?}
 
+	def patient_name
+		patient.try(:last_name)
+	end
+
+	def patient_name=(last_name)
+		self.patient = Patient.find_by(last_name: last_name) if last_name.present?
+	end	
 end

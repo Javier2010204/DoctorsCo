@@ -5,12 +5,13 @@
       %ul
         - @appoiment.errors.full_messages.each do |message|
           %li= message
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    =f.text_field :patient_name, class: "mdl-textfield__input", data:{autocomplete_source: patients_path}
+    =f.label "paciente", class: 'mdl-textfield__label'
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
-    =f.collection_select :patient_id, @patients, :id, :last_name, {selected: @appoiment.patient_id, include_blank: false}
+    = f.date_select :date
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
-    = f.date_select :date, class: 'mdl-textfield__label'
-  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
-    = f.time_select :hour,  class: 'mdl-textfield__label'
+    = f.time_select(:hour, ampm: true)
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
     = f.text_area :annotations, class: 'mdl-textfield__input'
     = f.label 'Anotaciones', class: 'mdl-textfield__label'

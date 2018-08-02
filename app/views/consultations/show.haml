@@ -5,7 +5,6 @@
         %strong
         =link_to "Editar", edit_consultation_path(@consultation), class: "indigo-text"
       %h3
-        = link_to @consultation.patient.first_name, @consultation.patient
         = link_to @consultation.patient.last_name, @consultation.patient
       .row
         .col-xs-12.col-sm-6

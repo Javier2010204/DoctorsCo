@@ -8,7 +8,13 @@ $colors:(
 	white: #FFF,
 	indigo: #2F33AC,
 	black: #000,
-	green: #00BFA5
+	green: #00BFA5,
+	special-blue: #2465AB,
+	special-teal: #0D5C63,
+	special-green: #4CE0B4,
+	special-light-green: #72EDDB,
+	special-light-blue: #42CBFC,
+	special-red: #ED536A
 );
 
 @each $color_name, $color in $colors{

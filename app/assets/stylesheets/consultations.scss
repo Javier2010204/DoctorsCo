@@ -2,24 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 ul.ui-autocomplete {
-  position: absolute !important;
-  list-style: none ;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: solid 1px #999 !important;
-  cursor: default !important;
-  li {
-    background-color: #FFF !important;
-    border-top: solid 1px #DDD !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    a {
-      color: #000 !important;
-      display: block !important;
-      padding: 3px !important;
-    }
-    a.ui-state-hover, a.ui-state-active {
-      background-color: #FFFCB2 !important;
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: solid 1px rgb(63,81,181);
+    cursor: pointer;
+    li {
+      background-color: #FFF;
+      border-bottom:solid 1px rgb(63,81,181);
+      margin: 0;
+      padding: 1em 4em;
+      a {
+        color: #000;
+        display: block;
+        padding: 1em;
+      }
+      a.ui-state-hover, a.ui-state-active {
+        background-color: #FFFCB2;
+      }
     }
   }
-}

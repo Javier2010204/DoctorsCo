@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	authenticated :user do 
 		root to: 'home#index'
 		get 'search/create'
+		get 'patient/search'
 		resources :patients
 		resources :consultations
 		resources :measurements
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
 	end 
 
 	devise_for :users
-	resources :contacts
+	post 'contacts/create'
 
 	
 end

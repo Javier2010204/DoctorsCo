@@ -18,6 +18,14 @@
 #  user_id               :integer
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
+#  address               :string
+#  weight                :integer
+#  size                  :string
+#  allergies             :text
+#  medicines             :text
+#  diseases              :text
+#  departament           :text
+#  state                 :string           default("active")
 #
 
 require 'test_helper'

@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require jquery-ui
+//= require main
 //= require turbolinks
-//= require hola
-//= require_tree .
+//= require_tree 
 

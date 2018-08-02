@@ -1,6 +1,5 @@
 class ConsultationsController < ApplicationController
 	before_action :set_consultation, only: [:show, :edit, :update, :destroy]
-	before_action :set_combo_values, only: [:new, :edit]
   
 	# GET /consultations
 	# GET /consultations.json
@@ -15,7 +14,8 @@ class ConsultationsController < ApplicationController
   
 	# GET /consultations/new
 	def new
-	  @consultation = Consultation.new
+		@consultation = Consultation.new
+		@current_user = current_user
 	end
   
 	# GET /consultations/1/edit
@@ -70,11 +70,7 @@ class ConsultationsController < ApplicationController
   
 	  # Never trust parameters from the scary internet, only allow the white list through.
 	  def consultation_params
-		params.require(:consultation).permit(:patient_id, :motivo, :fecha, :diagnostico, :anotaciones, :tratamiento, :sintomas, :antecedentes, :receta)
-	  end
-  
-	  def set_combo_values
-		@patients = current_user.patients
+		params.require(:consultation).permit(:patient_name,:patient_id, :motivo, :fecha, :diagnostico, :anotaciones, :tratamiento, :sintomas, :antecedentes, :receta)
 	  end
   end
   

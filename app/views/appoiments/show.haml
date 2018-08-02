@@ -5,7 +5,6 @@
 				=link_to 'Editar', edit_appoiment_path(@appoiment)
 				=link_to 'Eliminar', @appoiment, method: :delete, data:{confirm: 'Seguro que desea eliminar la cita? se eliminara de forma permanente.'}
 			%h3.underline
-				= link_to @appoiment.patient.first_name, @appoiment.patient
 				= link_to @appoiment.patient.last_name, @appoiment.patient
 			.text-center
 				%p.big-font

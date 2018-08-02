@@ -8,11 +8,10 @@
 
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
     = f.label :fecha
-    = f.datetime_select :fecha
+    = f.datetime_select(:fecha, ampm: true)
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
     = f.label :patient
-    = f.collection_select :patient_id, Patient.order(:first_name), :id, :first_name
-    = f.text_field :patient_name
+    = f.text_field :patient_name, class: 'mdl-textfield__input', data:{ autocomplete_source: patients_path}
   %h4.black-text Motivo de la consulta
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.full-width
     = f.text_area :motivo, class: 'mdl-textfield__input'

@@ -12,6 +12,7 @@ module Meriana
 		config.load_defaults 5.1
 		config.assets.precompile += %w(landing.css)
 		config.serve_static_assets = true
+		config.time_zone = 'America/Guatemala'
 
 
 		# Settings in config/environments/* take precedence over those specified here.

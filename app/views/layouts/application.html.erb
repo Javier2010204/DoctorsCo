@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Doctors Co - Aplicacion de medicos</title>
-		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+		<title>Doctors Co - Plataforma que une medicos y pacientes</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta content='Doctors Co - Consultas en linea, pacientes' property='og:title'>
-		<meta content='Aplicacion para consultas, citas, pacientes, comunidad de medicos' property='og:description'>
+		<meta name="description" content='Doctors Co - La plataforma que une medicos y pacientes' property='og:title'>
+		<meta content='DoctorsCo es la plataforma que une medicos y pacientes, en la que podras llevar el historial de tus pacientes, contactar con especialistas y llevar los resultados, diagnosticos y el historial medico a todas partes' property='og:description'>
 		<meta content='https://www.doctorsco.net/' property='og:url'>
 		<meta content='DoctorsCo' property='og:site_name'>
 		<meta content='website' property='og:type'>
@@ -21,9 +20,11 @@
 	<body>
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 			<%= render 'partials/navigation'%>
-			<div class="notices text-center black-text" style:"<%= 'display:none;' if notice.nil? && alert.nil? %> ">
-				<%= alert %> <%= notice %>
-			</div>
+			<p class="large-padding special-green white-text text-center no-margin" style="<%= 'display: none;' if alert.nil? && notice.nil? %>">
+				<%= alert %>
+				<%= notice %>
+				<span style="float: right;" class="close-parent">X</span>
+			</p>
 			<main class="mdl-layout__content full-height">
 				<%= yield %>
 			</main>

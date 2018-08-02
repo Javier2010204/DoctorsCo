@@ -3,8 +3,7 @@
 		.box.mdl-shadow--2dp.white.relative.add_padding
 			.actions.absolute
 				=link_to "Editar", edit_patient_path(@patient), class: 'indigo-text'
-			%h3
-				= @patient.first_name 
+			%h3 
 				= @patient.last_name
 			.mdl-tabs.mdl-js-tabs.mdl-ripple-effect
 				.mdl-tabs__tab-bar

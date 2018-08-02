@@ -14,7 +14,6 @@
 #  annotations          :text
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
-#  nombre_campo         :tipo
 #  talla                :integer
 #  fum                  :date
 #  antitetanica         :string

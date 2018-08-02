@@ -10,7 +10,7 @@ h1{
 	margin: 0;
 }
 .logo-font{
-	font-family: 'Pacifico', sans-serif !important;
+	font-family: 'Pacifico', cursive;
 }
 .full-height{
 	height: 100%;
@@ -69,9 +69,6 @@ h1{
 .underline{
 	text-decoration: underline;
 }
-.logo-font{
-	font-size: 5em;
-}
 .big-font{
 	font-size: 2.1em;
 }
@@ -88,9 +85,33 @@ h1{
 	right: 1em;
 	top: 10px;
 }
-.notices{
-	background-color: #64FFDA;
-}
 .top-border{
 	border-top: 1px solid black
+}
+.noticias{
+	background-color: #1AD9A2;
+}
+.close-parent{
+	cursor: pointer;
+	&:hover{
+		opacity: 0.4;
+	}
+}
+
+.specialty{
+    height: 300px;
+    background-size: 100%;
+    background-position: center;
+    padding: 0px !important;
+	overflow: hidden;
+	margin: 4em;
+	&:hover{
+		opacity: 0.6;
+		cursor: pointer;
+		transition: opacity 0.5s;
+		h3{
+			font-size: 3em;
+			transition: font-size 0.5s;
+		}
+	}
 }

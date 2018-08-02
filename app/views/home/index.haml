@@ -1,23 +1,41 @@
-.row.center-xs
-	.col-xs-12
-		.box.blue.white-text.large-padding
-			%h2 Bienvenido #{@user.email}
+.row.center-xs.blue.white-text
+	%h2.big-font.logo-font 
+		Bienvenido Dr.
+		= @user.name
+-# .row.center-xs.middle-xs.full-height
+-# 	.col-xs-12.col-sm-6.col-lg-3.col-md-4.specialty.light-blue
+-# 		.row.full-height.middle-xs.center-xs
+-# 			.col-xs-12
+-# 				%h3.logo-font.be-medium.white-text
+-# 					=link_to "Medicina General", root_path, class: 'white-text'
+-# 				%p.white-text
+-# 	.col-xs-12.col-sm-6.col-lg-3.col-md-4.specialty.red
+-# 		.row.full-height.middle-xs.center-xs
+-# 			.col-xs-12
+-# 				%h3.logo-font.be-medium.white-text
+-# 					=link_to "Nutrición", root_path, class: 'white-text'
+-# 				%p.white-text
+-# 	.col-xs-12.col-sm-6.col-lg-3.col-md-4.specialty.green
+-# 		.row.full-height.middle-xs.center-xs
+-# 			.col-xs-12
+-# 				%h3.logo-font.be-medium.white-text
+-# 					=link_to "Odontología", root_path, class: 'white-text'
+-# 				%p.white-text
 .row.center-xs.full-height.top-space
 	.col-xs-12.col-sm-6.col-lg-6
 		.box.white.mdl-shadow--2dp.add_padding	
-			%h3.green-text.underline Citas de hoy
-			-@appoiments.each do |appoiment|
-				-if appoiment.date == Date.today
+			%h3.green-text.underline.logo-font Citas de hoy
+			-@appoiments.each do |appointment|
+				-if appointment.date == Date.today
 					%p.top-border
-					%h3
-						=appoiment.patient.first_name
-						=appoiment.patient.last_name
+					%h3.logo-font
+						=appointment.patient.last_name
 					%p
-						=appoiment.date
+						=appointment.date
 					%p 
-						=appoiment.hour.strftime('%H:%M')
+						=appointment.hour.strftime('%H:%M')
 					%p
-						=link_to 'Mostrar', appoiment, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
+						=link_to 'Mostrar', appointment, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
 				-else
 					%h4.dark-grey-text
 						No hay citas para hoy

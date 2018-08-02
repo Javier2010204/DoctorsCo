@@ -16,6 +16,8 @@ class AppoimentsController < ApplicationController
   # GET /appointments/new
   def new
     @appoiment = Appoiment.new
+    @current_user = current_user
+    @my_time = Time.now
   end
 
   # GET /appointments/1/edit
@@ -70,7 +72,7 @@ class AppoimentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appoiment_params
-      params.require(:appoiment).permit(:date, :hour, :annotations, :patient_id, :user_id)
+      params.require(:appoiment).permit(:patient_name,:date, :hour, :annotations, :patient_id, :user_id)
     end
 
     def set_combo_values

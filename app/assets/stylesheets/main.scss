@@ -1,0 +1,123 @@
+.logo{
+	max-height: 100%;
+	max-width: 100%;
+}
+.redes{
+	font-size: 2.2em !important;
+	margin-right: 10px;
+}
+.no-decoration{
+	text-decoration:none !important;
+}
+.no-list{
+	list-style: none;
+}
+.bottom-space{
+	margin-bottom: 3em;
+}
+.mdl-card__media{
+	background-color: none !important;
+}
+.suscripcion-titulo{
+	padding: 1em 0 0 0;
+}
+.large-padding{
+	padding: 10px 15px;
+}
+.logo-font{
+	font-family: 'Pacifico', sans-serif !important;
+}
+.special-logo{
+	border-bottom: solid 3px;
+	padding-bottom: 10px;
+}
+.be-bigger{
+	font-size: 5em;
+}
+.be-medium{
+	font-size: 1.5em;
+}
+.be-small{
+	font-size: 1.3em;
+}
+.fixed{
+    position: fixed;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.bottom{
+    bottom: 0px;
+}
+.top{
+    top: 3em;
+}
+.right{
+    right: 1em; 
+}
+.hidden{
+    display: none;
+}
+.navigation{
+    li{
+        @extend .be-medium;
+        padding: 5px 10px;
+        transition: all 0.4s;
+        &:hover{
+            background-color: #1C7ECC;
+        }
+    }
+    a{
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+#description{
+    ul{
+        margin: 0px;
+    }
+    &.absolute{
+        bottom: 0px;
+    }
+    &.fixed{
+        top: 0px
+    }
+}
+.product{
+    height: 300px;
+    background-size: 100%;
+    background-position: center;
+    padding: 0px !important;
+    overflow: hidden;
+    &:hover{
+        .screen{
+            top: 0%;
+        }
+    }
+    .screen{
+        position: relative;
+        top: -100%; 
+        background-color: rgba(0,0,0,0.8);
+        height: 100%;
+        width: 100%;
+        transition: top 0.5s;
+    }
+}
+.font-redes{
+    font-size: 2em;
+    padding: 0.5em;
+}
+.big-padding{
+    padding: 2em;
+}
+#card-doctors{
+    width: 300px;
+    z-index: 5;
+    top: calc(50% - 60px);
+    left: calc(50% - 10.5em);
+}
+

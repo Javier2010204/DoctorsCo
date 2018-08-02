@@ -7,11 +7,8 @@
           %li= message
   %h3.top-space Datos generales
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-    = f.text_field :first_name, class: 'mdl-textfield__input'
-    = f.label 'Nombres', class: 'mdl-textfield__label'
-  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
     = f.text_field :last_name, class: 'mdl-textfield__input'
-    = f.label 'Apellidos', class: 'mdl-textfield__label'
+    = f.label 'Nombre completo', class: 'mdl-textfield__label'
   .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
     = f.text_field :address, class: 'mdl-textfield__input'
     = f.label 'Direccion', class: 'mdl-textfield__label'

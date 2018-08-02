@@ -15,14 +15,12 @@
 				%tbody
 					- @consultations.each do |consultation|
 						%tr
-						%td
-							= consultation.patient.first_name
-							= consultation.patient.last_name
-						%td= consultation.motivo
-						%td= consultation.fecha
-						%td= consultation.diagnostico
-						%td= consultation.receta
-						%td= link_to 'Mostrar', consultation, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
+							%td= consultation.patient.last_name
+							%td= consultation.motivo
+							%td= consultation.fecha
+							%td= consultation.diagnostico
+							%td= consultation.receta
+							%td= link_to 'Mostrar', consultation, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
 .btn-floating
 	=button_to new_consultation_path(), method: :get, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect' do
 		%i.material-icons add
