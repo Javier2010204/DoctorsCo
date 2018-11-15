@@ -8,6 +8,7 @@ class AppoimentsController < ApplicationController
     @appoiments = current_user.appoiments
   end
 
+
   # GET /appointments/1
   # GET /appointments/1.json
   def show
@@ -48,7 +49,7 @@ class AppoimentsController < ApplicationController
         format.html { redirect_to @appoiment, notice: 'Appointment was successfully updated.' }
         format.json { render :show, status: :ok, location: @appoiment }
       else
-        format.html { render :edit }
+        format.html { render :edit } 
         format.json { render json: @appoiment.errors, status: :unprocessable_entity }
       end
     end

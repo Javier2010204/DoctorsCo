@@ -4,7 +4,7 @@ class UsuariosController < ApplicationController
 	before_action :authenticate_owner!, only: [:update]
 
 	def show
-		
+		@publicaciones = Post.all
 	end
 
 	def update

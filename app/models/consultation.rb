@@ -29,8 +29,8 @@ class Consultation < ApplicationRecord
 	belongs_to :user
 	has_many :measurements, dependent: :destroy
 	accepts_nested_attributes_for :measurements
-
 	has_many :prescriptions, dependent: :destroy
+	
 	accepts_nested_attributes_for :prescriptions
 
 	#, reject_if: proc {|attr| attr[:heigth, :weight, annotations, blod_pressure, breathing_rate, etc...].blank ?}

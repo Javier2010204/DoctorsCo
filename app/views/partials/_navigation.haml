@@ -7,7 +7,7 @@
 				=link_to 'Buscar', root_path, class: 'mdl-navigation__link'
 				=link_to'Cerrar Sesion',destroy_user_session_path, method: :delete,class: "mdl-navigation__link"
 			-else
-				=link_to 'Iniciar Sesion', new_user_session_path, class: "mdl-navigation__link"
+				%a.mdl-navigation__link{target:""}(href="https://doctorsco-ee4c3.firebaseapp.com") Iniciar Sesion
 .mdl-layout__drawer
 	%span.mdl-layout-title.logo-font.light-blue-text.medium-font	 DoctorsCo
 	%nav.mdl-navigation
@@ -18,4 +18,4 @@
 			=link_to'Comunidad',posts_path,class: "mdl-navigation__link"
 			=link_to'Cerrar sesion',destroy_user_session_path, method: :delete,class: "mdl-navigation__link"
 		-else
-			=link_to 'Iniciar Sesion', new_user_session_path, class: "mdl-navigation__link"
+			%a.mdl-navigation__link{target:""}(href="https://doctorsco-ee4c3.firebaseapp.com") Iniciar Sesion

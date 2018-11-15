@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 	unauthenticated :user do
 		root 'home#unregistered'
 		get 'home/suscribe'
+		get 'home/doctors'
 	end 
 
 	devise_for :users

@@ -15,6 +15,10 @@ class HomeController < ApplicationController
 		
 	end
 
+	def doctors
+		@doctors = User.all
+	end
+
 	private
 		def set_layout
 			"structure"

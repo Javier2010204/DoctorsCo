@@ -7,7 +7,7 @@
                 %p.be-bigger 
                     %i.fa.fa-angle-down
     %nav.fixed.top.right.navigation#navigation
-        - menu = [{title:"Inicio", link: root_path}, {title: "Médicos", link:root_path},{title:"Sobre nosotros", link: root_path}, {title:"Iniciar Sesión", link: new_user_session_path}]
+        - menu = [{title:"Inicio", link: home_doctors_url}, {title: "Médicos", link:root_path},{title:"Sobre nosotros", link: root_path}, {title:"Iniciar Sesión", link: new_user_session_path}]
         %ul.list-inline
             -menu.each do |item|
                 %li.white-text
@@ -72,7 +72,7 @@
             %h2.logo-font DoctorsCo
     .col-md-3.col-xs-12
         .box.white-text.middle-xs
-            %h4.be-small by LoadingCo ®️ 
+            %h4.be-small.logo-font by DoctorsCo ®️ 
     .col-md-3.col-xs-12
         .box.white-text.middle-xs
             %a.white-text.font-redes{target:"_blank"}(href="https://www.facebook.com/doctorsCo/")
