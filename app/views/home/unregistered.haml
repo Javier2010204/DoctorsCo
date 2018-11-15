@@ -7,7 +7,7 @@
                 %p.be-bigger 
                     %i.fa.fa-angle-down
     %nav.fixed.top.right.navigation#navigation
-        - menu = [{title:"Inicio", link: home_doctors_url}, {title: "Médicos", link:root_path},{title:"Sobre nosotros", link: root_path}, {title:"Iniciar Sesión", link: new_user_session_path}]
+        - menu = [{title:"Inicio", link: home_doctors_url}, {title: "Médicos", link:root_path},{title:"Sobre nosotros", link: root_path}, {title:"Iniciar Sesión", link: "https://doctorsco-ee4c3.firebaseapp.com"}]
         %ul.list-inline
             -menu.each do |item|
                 %li.white-text
