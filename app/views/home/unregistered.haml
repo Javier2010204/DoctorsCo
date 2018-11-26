@@ -7,7 +7,7 @@
                 %p.be-bigger 
                     %i.fa.fa-angle-down
     %nav.fixed.top.right.navigation#navigation
-        - menu = [{title:"Inicio", link: home_doctors_url}, {title: "Médicos", link:root_path},{title:"Sobre nosotros", link: root_path}, {title:"Iniciar Sesión", link: "https://doctorsco-ee4c3.firebaseapp.com"}]
+        - menu = [{title:"Inicio", link: home_doctors_url, id:"home"}, {title: "Médicos", link:root_path},{title:"Sobre nosotros", link: "#", id: "sobre-nosotros-click"}, {title:"Iniciar Sesión", link: "https://doctorsco-ee4c3.firebaseapp.com", id:"sesion"}]
         %ul.list-inline
             -menu.each do |item|
                 %li.white-text
@@ -23,7 +23,7 @@
                         %ul.list-inline
                             -menu.each do |item|
                                 %li.white-text
-                                    =link_to item[:title], item[:link], class:'white-text'      
+                                    =link_to item[:title], item[:link], class:'white-text'    
 .text-center.relative#menu
     .absolute.white#card-doctors
         %h2.logo-font.be-medium.light-blue-text Caracteristicas de DoctorsCo
@@ -66,6 +66,10 @@
                         .actions
                             =submit_tag "enviar", class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
             #email-info.white-text.text-center.large-padding.medium.hidden
+.full-height.indigo.row.middle-xs.center-xs.blue-text.relative
+    Sobre nosotros
+.full-height.white.row.middle-xs.center-xs.blue-text.relative#sobre-nosotros
+    
 .special-blue.center-xs.row.middle-xs.full-width
     .col-xs-12.col-md-3
         .box.white-text.middle-xs
