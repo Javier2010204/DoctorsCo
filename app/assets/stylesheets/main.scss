@@ -2,6 +2,20 @@
 // admin
 // https://byoearth.com/wp-admin/
 //unsplash.com
+//56ViFzSm
+
+.title{
+ font-size: 4.5em;
+}
+
+.subtitle{
+font-size: 3em;
+}
+
+.medium{
+   font-size: 1.5em;
+}
+
 .logo{
 	max-height: 100%;
 	max-width: 100%;
@@ -60,7 +74,7 @@
     top: 3em;
 }
 .right{
-    right: 1em; 
+    right: 1em;
 }
 .hidden{
     display: none;
@@ -104,7 +118,7 @@
     }
     .screen{
         position: relative;
-        top: -100%; 
+        top: -100%;
         background-color: rgba(0,0,0,0.8);
         height: 100%;
         width: 100%;
@@ -124,4 +138,3 @@
     top: calc(50% - 60px);
     left: calc(50% - 10.5em);
 }
-

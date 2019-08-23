@@ -1,13 +1,13 @@
-.full-height.light-blue.row.middle-xs.center-xs.white-text.relative
+.full-height.special-blue.row.middle-xs.center-xs.white-text.relative
     .row.center-xs
         .col-xs-12.col-sm-12.col-lg-12
             .box
-                %h1.special-logo.be-bigger
+                %h1.special-logo.title
                     %span.logo-font DoctorsCo
-                %p.be-bigger 
+                %p.be-bigger
                     %i.fa.fa-angle-down
     %nav.fixed.top.right.navigation#navigation
-        - menu = [{title:"Inicio", link: home_doctors_url, id:"home"}, {title: "Médicos", link:root_path},{title:"Sobre nosotros", link: "#", id: "sobre-nosotros-click"}, {title:"Iniciar Sesión", link: "https://doctorsco-ee4c3.firebaseapp.com", id:"sesion"}]
+        - menu = [{title:"Inicio", link: home_doctors_url, id:"home"}, {title:"Iniciar Sesión", link: "https://doctorsco-ee4c3.firebaseapp.com", id:"sesion"}]
         %ul.list-inline
             -menu.each do |item|
                 %li.white-text
@@ -15,7 +15,7 @@
     .absolute.special-blue.large-padding.white-text.full-width#description
         .row.middle-xs.center-xs
             .col-xs-7.col-sm-6.white-text.be-medium
-                %span.logo-font DoctorsCo 
+                %span.logo-font DoctorsCo
                 La plataforma que conecta médicos y pacientes
             .col-xs.hidden#sticky-navigation
                 .box
@@ -23,8 +23,60 @@
                         %ul.list-inline
                             -menu.each do |item|
                                 %li.white-text
-                                    =link_to item[:title], item[:link], class:'white-text'    
-.text-center.relative#menu
+                                    =link_to item[:title], item[:link], class:'white-text'
+.row.grey.black-text.center-xs.no-overflow.full-height.middle-xs#pacientes
+    .col-xs-12
+        .box
+            %h1.logo-font.top-space.subtitle DoctorsCo para pacientes
+            .row.center-xs.margin-top.black-text.middle-xs.medium
+                .col-xs-12
+                    .box
+                        .row.top-space.medium#Item1
+                            .col-xs-4.text-right
+                                .box
+                                    %i.fa.fa-search
+                            .col-xs-7.text-justify
+                                .box
+                                    %p.text-justify Busca un médico cerca de ti.
+                            .col-xs-1
+                                .box
+                        .row.top-space.medium#Item2
+                            .col-xs-4.text-right
+                                .box
+                                    %i.fa.fa-calendar
+                            .col-xs-7.text-justify
+                                .box
+                                    %p Reserva tu cita indicando fecha y hora en la que quieres ser atendido.
+                            .col-xs-1
+                                .box
+                        .row.top-space.medium#Item3
+                            .col-xs-4.text-right
+                                .box
+                                    %i.fa.fa-phone
+                            .col-xs-7.text-justify
+                                .box
+                                    %p Ve a la consulta y recibe en la aplicación el diagnóstico y tratamiento que te dejo tu médico.
+                            .col-xs-1
+                                .box
+                        .row.top-space.medium#Item4
+                            .col-xs-4.text-right
+                                .box
+                                    %i.fa.fa-bell
+                            .col-xs-7.text-justify
+                                .box
+                                    %p Recibe notificaciones que te recuerden la hora de tomar tus medicamentos, exámenes que te debes realizar, próximas citas y mucho más.
+                            .col-xs-1
+                                .box
+                        .row.top-space.medium#Item5
+                            .col-xs-4.text-right
+                                .box
+                                    %i.fa.fa-child
+                            .col-xs-7.text-justify
+                                .box
+                                    %p.logo-font Cuida de tu salud con DoctorsCo.
+                            .col-xs-1
+                                .box
+.hidden.text-center.relative#menu
     .absolute.white#card-doctors
         %h2.logo-font.be-medium.light-blue-text Caracteristicas de DoctorsCo
     -menu_products = [{title: "Solicitud de cita", color:"special-light-blue", text:"Puedes hacer tu solicitud de cita con algún médico ó especialista desde DoctorsCo evitando hacer filas en clínicas ahorrandote tiempo"}, {title: "Diagnosticos y consultas", color:"special-green", text:"Como pacientes en DoctorsCo puedes tener el historial de las visitas medicas disponibles en cualquier dispositivo y en todo momento"}, {title: "Busqueda de especialista", color:"special-teal", text: "Puedes buscar en la plataforma a los especialistas segun tu necesidad,podras ver su perfil en el que se especifica su especialidad, experiencia, direccion y mucha informacion mas para que estes seguro a la hora de hacer tu eleccion"}, {title: "Recordatorio de medicamentos", color:"white", text:"DoctorsCo te recordara el momento en que tengas que tomarte tu medicamento, asegurandote que tomaste el medicamento correcto en el momento indicado, asi puedes curarte mas rapido sin tantas preocupaciones"},{title: "Historial de pacientes en linea", color:"white", text:"DoctorsCo guarda en linea el historial de sus pacientes para que los tenga disponible en cualquier momento y lo pueda revisar en cualquier lugar desde cualquier dispositivo"}, {title: "Comunidad", color:"special-light-blue", text: "Tendra acceso a la comunidad de médicos en la que podra compartir articulos, estar informado de las novedades en la medicina, contactar con mas medicos y poder debatir sobre diferentes temas relacionados con ciencia y medicina"},{title: "Perfil", color:"special-light-green", text:"En DoctorsCo podras crear tu perfil profesional para que nuevos pacientes puedan encontrarte, leeran tu extracto profesional, podran buscar la direccion de su clínica, hospital o sanatorio y podran comunicase con usted vía telefónica, correo electronico o mensaje directo"}, {title: "Pacientes, notificaciones y mas", color:"special-blue", text:"DoctorsCo le permitira tener una novedosa herramienta para poder tener un control ordenado sobre sus citas, recibira notificaciones de solicitud de pacientes que quieren una cita con fecha y hora la cual usted podra aceptar, reprogramar o denegar"}]
@@ -43,42 +95,48 @@
                 %h3.white-text.text-center.logo-font Información de contacto
                 .top-space.text-center.white-text
                     %p
-                        %strong Correo Electrónico: 
+                        %strong Correo Electrónico:
                         doctorsco.net@gmail.com
                     %p
-                        %strong Dirección: 
-                        Vía 5 1-29 Zona 4, 4 Grados Norte 
+                        %strong Dirección:
+                        Vía 5 1-29 Zona 4, 4 Grados Norte
                     Chamba Coworking
         .col-xs-12.col-sm-6.top-space
             .box
                 .big-padding.mdl-shadow--2dp.white
-                    %h3.logo-font Envianos un correo electrónico
-                    =form_tag(contacts_create_url,method: :post, remote: true, id: "emails-form") do 
-                        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-                            =email_field_tag "email", nil, class: 'mdl-textfield__input'
-                            %label.mdl-textfield__label Escribe tu correo electronico aquí...
+                    %h3.logo-font Recomiendanos a tu médico
+                    =form_tag(contacts_create_url,method: :post, remote: true, id: "emails-form") do
                         .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                             =text_field_tag "name", nil, class: 'mdl-textfield__input'
-                            %label.mdl-textfield__label Escribe tu nombre aquí...
+                            %label.mdl-textfield__label Nombre
+                        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                            =email_field_tag "email", nil, class: 'mdl-textfield__input'
+                            %label.mdl-textfield__label Correo
+                        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                            =text_field_tag "address", nil, class: 'mdl-textfield__input'
+                            %label.mdl-textfield__label Dirección
+                        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                            =number_field_tag "phone", nil, class: 'mdl-textfield__input'
+                            %label.mdl-textfield__label Teléfono
                         .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                             =text_area "body", nil, class: 'mdl-textfield__input'
-                            %label.mdl-textfield__label Explícanos en que podemos ayudarte
+                            %label.mdl-textfield__label Escribe algun comentario...
                         .actions
                             =submit_tag "enviar", class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
             #email-info.white-text.text-center.large-padding.medium.hidden
-.full-height.indigo.row.middle-xs.center-xs.blue-text.relative
+.hidden.full-height.indigo.row.middle-xs.center-xs.blue-text.relative
     Sobre nosotros
     .top-space
-        %p hola mundo 
-.full-height.white.row.middle-xs.center-xs.blue-text.relative#sobre-nosotros
-    
+        %p hola mundo
+.hidden.full-height.white.row.middle-xs.center-xs.blue-text.relative#sobre-nosotros
+
 .special-blue.center-xs.row.middle-xs.full-width
     .col-xs-12.col-md-3
         .box.white-text.middle-xs
             %h2.logo-font DoctorsCo
     .col-md-3.col-xs-12
         .box.white-text.middle-xs
-            %h4.be-small.logo-font by DoctorsCo ®️ 
+            %h4.be-small.logo-font by DoctorsCo ®️
     .col-md-3.col-xs-12
         .box.white-text.middle-xs
             %a.white-text.font-redes{target:"_blank"}(href="https://www.facebook.com/doctorsCo/")

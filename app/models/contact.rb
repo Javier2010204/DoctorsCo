@@ -14,6 +14,5 @@
 class Contact < ApplicationRecord
 	#validates :email, presence{presence: true, message: 'Parece que olvidaste poner el correo'}
 	validates_presence_of :name, message: "Parece que olvidate escribir tu nombre"
-	validates_presence_of :body, message: "El cuerpo del mensaje no puede estar vacío"
-	validates_format_of :email, with: Devise::email_regexp, message: "no enviaste un correo valido, intentalo de nuevo"
+	validates_presence_of :phone, message: "El cuerpo del mensaje no puede estar vacío"
 end
