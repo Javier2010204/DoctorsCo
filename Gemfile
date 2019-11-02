@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks'
 #58072667
 #gem devise for authentication
-gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'devise', '~> 4.7'
 # Use annotate for annotation in the models
 gem 'annotate'
 #Best in place
