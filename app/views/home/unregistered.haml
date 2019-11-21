@@ -6,7 +6,7 @@
                     %span.logo-font DoctorsCo
                 %p.be-bigger
                     %i.fa.fa-angle-down
-    %nav.fixed.top.right.navigation#navigation
+    %nav.fixed.top.right.navigation#navigation.hidden
         - menu = [{title:"Inicio", link: home_doctors_url, id:"home"}, {title:"Iniciar Sesión", link: "https://doctorsco-ee4c3.firebaseapp.com", id:"sesion"}]
         %ul.list-inline
             -menu.each do |item|
@@ -14,12 +14,12 @@
                     =link_to item[:title], item[:link], class:'white-text'
     .absolute.special-blue.large-padding.white-text.full-width#description
         .row.middle-xs.center-xs
-            .col-xs-7.col-sm-6.white-text.be-medium
+            .col-xs-12.col-sm-6.white-text.be-medium
                 %span.logo-font DoctorsCo
                 La plataforma que conecta médicos y pacientes
-            .col-xs.hidden#sticky-navigation
+            .col-xs.hidden#sticky-navigation.hidden
                 .box
-                    %nav.text-right.navigation
+                    %nav.text-right.navigation.hidden
                         %ul.list-inline
                             -menu.each do |item|
                                 %li.white-text
@@ -129,8 +129,7 @@
     .top-space
         %p hola mundo
 .hidden.full-height.white.row.middle-xs.center-xs.blue-text.relative#sobre-nosotros
-
-.special-blue.center-xs.row.middle-xs.full-width
+.special-blue.center-xs.row.middle-xs.full-width.hidden
     .col-xs-12.col-md-3
         .box.white-text.middle-xs
             %h2.logo-font DoctorsCo
