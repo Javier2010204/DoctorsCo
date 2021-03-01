@@ -6,8 +6,8 @@
                     %span.logo-font DoctorsCo
                 %p.be-bigger
                     %i.fa.fa-angle-down
-    %nav.fixed.top.right.navigation#navigation.hidden
-        - menu = [{title:"Inicio", link: home_doctors_url, id:"home"}, {title:"Iniciar Sesión", link: "https://doctorsco-ee4c3.firebaseapp.com", id:"sesion"}]
+    %nav.fixed.top.right.navigation#navigation
+        - menu = [{title:"Iniciar Sesión", link: "https://doctorsco-ee4c3.firebaseapp.com", id:"sesion"}]
         %ul.list-inline
             -menu.each do |item|
                 %li.white-text
@@ -37,7 +37,7 @@
                                     %i.fa.fa-search
                             .col-xs-7.text-justify
                                 .box
-                                    %p.text-justify Busca un médico cerca de ti.
+                                    %p.text-justify.texto Busca un médico cerca de ti.
                             .col-xs-1
                                 .box
                         .row.top-space.medium#Item2
@@ -46,7 +46,7 @@
                                     %i.fa.fa-calendar
                             .col-xs-7.text-justify
                                 .box
-                                    %p Reserva tu cita indicando fecha y hora en la que quieres ser atendido.
+                                    %p.texto Reserva tu cita indicando fecha y hora en la que quieres ser atendido.
                             .col-xs-1
                                 .box
                         .row.top-space.medium#Item3
@@ -55,7 +55,7 @@
                                     %i.fa.fa-phone
                             .col-xs-7.text-justify
                                 .box
-                                    %p Ve a la consulta y recibe en la aplicación el diagnóstico y tratamiento que te dejo tu médico.
+                                    %p.texto Ve a la consulta y recibe en la aplicación el diagnóstico y tratamiento que te dejo tu médico.
                             .col-xs-1
                                 .box
                         .row.top-space.medium#Item4
@@ -64,7 +64,7 @@
                                     %i.fa.fa-bell
                             .col-xs-7.text-justify
                                 .box
-                                    %p Recibe notificaciones que te recuerden la hora de tomar tus medicamentos, exámenes que te debes realizar, próximas citas y mucho más.
+                                    %p.texto Recibe notificaciones que te recuerden la hora de tomar tus medicamentos, exámenes que te debes realizar, próximas citas y mucho más.
                             .col-xs-1
                                 .box
                         .row.top-space.medium#Item5
@@ -73,7 +73,7 @@
                                     %i.fa.fa-child
                             .col-xs-7.text-justify
                                 .box
-                                    %p.logo-font Cuida de tu salud con DoctorsCo.
+                                    %p.logo-font.texto Cuida de tu salud con DoctorsCo.
                             .col-xs-1
                                 .box
 .hidden.text-center.relative#menu
@@ -99,8 +99,7 @@
                         doctorsco.net@gmail.com
                     %p
                         %strong Dirección:
-                        Vía 5 1-29 Zona 4, 4 Grados Norte
-                    Chamba Coworking
+                        Vía 4 1-00, Zona 4, Edificio Campus Tec II
         .col-xs-12.col-sm-6.top-space
             .box
                 .big-padding.mdl-shadow--2dp.white
@@ -129,7 +128,7 @@
     .top-space
         %p hola mundo
 .hidden.full-height.white.row.middle-xs.center-xs.blue-text.relative#sobre-nosotros
-.special-blue.center-xs.row.middle-xs.full-width.hidden
+.special-blue.center-xs.row.middle-xs.full-width
     .col-xs-12.col-md-3
         .box.white-text.middle-xs
             %h2.logo-font DoctorsCo
